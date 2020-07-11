@@ -17,9 +17,9 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //var cam = Camera.main;
-        //topScreenWall = cam.ScreenToWorldPoint(new Vector3(cam.pixelWidth / 2, cam.pixelHeight, 1));
-        //transform.position = new Vector3(topScreenWall.x, topScreenWall.y, topScreenWall.z);
+        var cam = Camera.main;
+        topScreenWall = cam.ScreenToWorldPoint(new Vector3(cam.pixelWidth / 2, cam.pixelHeight, 1));
+        transform.position = new Vector3(transform.position.x, topScreenWall.y, topScreenWall.z);
         Physics2D.gravity = new Vector2(0, 0);
     }
 
