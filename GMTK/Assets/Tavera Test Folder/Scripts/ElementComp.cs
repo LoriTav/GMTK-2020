@@ -9,7 +9,7 @@ public class ElementComp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UpdateSelfElement(elementObj);
+        
     }
 
     // Update is called once per frame
@@ -18,9 +18,8 @@ public class ElementComp : MonoBehaviour
         
     }
 
-    public void UpdateSelfElement(Elements_SO newElement)
+    public void UpdateSelfElement()
     {
-        elementObj = newElement;
-        GetComponent<SpriteRenderer>().color = newElement.color;
+        GetComponent<SpriteRenderer>().color = elementObj.color;
     }
 }

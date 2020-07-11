@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   elementName: Fire
   color: {r: 1, g: 0.42140436, b: 0, a: 1}
+  elementSprite: {fileID: -6869192943169105091, guid: 3aa2c50696171c046adbf0a99f387a20,
+    type: 3}
