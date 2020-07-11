@@ -9,44 +9,45 @@ public class EnemyHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Bullet")
+        if (collision.gameObject.tag == "Bullet")
         {
             ElementComp bulletElementComp = collision.gameObject.GetComponent<ElementComp>();
             ElementComp pinElementComp = GetComponent<ElementComp>();
 
-            if(!bulletElementComp || !pinElementComp) { return; }
+            if (!bulletElementComp || !pinElementComp) { return; }
 
-            if(bulletElementComp.elementObj != pinElementComp.elementObj)
+            if (bulletElementComp.elementObj != pinElementComp.elementObj)
             {
                 health--;
                 Debug.Log(name + " Received damage");
+                Destroy(collision.gameObject);
             }
 
-            if((bulletElementComp.elementObj == pinElementComp.elementObj) || health <= 0)
+            if ((bulletElementComp.elementObj == pinElementComp.elementObj) || health <= 0)
             {
                 Debug.Log(name + " is dead");
                 Destroy(gameObject);
             }
         }
-        else if(collision.gameObject.tag == "Player")
+        else if (collision.gameObject.tag == "Player")
         {
             health = 0;
             Debug.Log(name + " is dead");
             Destroy(gameObject);
         }
     }
-    
+
     private void OnDestroy()
     {
         EnemyManager.instance.enemiesOnField.Remove(this.gameObject);
