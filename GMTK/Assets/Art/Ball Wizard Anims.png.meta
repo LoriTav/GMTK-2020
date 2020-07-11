@@ -1,43 +1,43 @@
 fileFormatVersion: 2
-guid: 714efbf5058723141b226bec837dfda3
+guid: 3aa2c50696171c046adbf0a99f387a20
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3378808090003686146
-    second: BowlingAlleyFloorPink_0
+      213: 4170494258446937193
+    second: Ball Wizard Anims_0
   - first:
-      213: 8542480146445145278
-    second: BowlingAlleyFloorPink_1
+      213: -750330168974787119
+    second: Ball Wizard Anims_1
   - first:
-      213: -1014377167667561365
-    second: BowlingAlleyFloorPink_2
+      213: 3601942068625801644
+    second: Ball Wizard Anims_2
   - first:
-      213: 7426949401221172880
-    second: BowlingAlleyFloorPink_3
+      213: -6869192943169105091
+    second: Ball Wizard Anims_3
   - first:
-      213: 1772691500891082943
-    second: BowlingAlleyFloorPink_4
+      213: -5006051219718690313
+    second: Ball Wizard Anims_4
   - first:
-      213: -7219776098813668506
-    second: BowlingAlleyFloorPink_5
+      213: -1313665568148245660
+    second: Ball Wizard Anims_5
   - first:
-      213: 4976189701157872003
-    second: BowlingAlleyFloorPink_6
+      213: 7157470302244716885
+    second: Ball Wizard Anims_6
   - first:
-      213: 4169294715757683887
-    second: BowlingAlleyFloorPink_7
+      213: 2332310538001347054
+    second: Ball Wizard Anims_7
   - first:
-      213: 8605248058071883278
-    second: BowlingAlleyFloorPink_8
+      213: -6551755440859112057
+    second: Ball Wizard Anims_8
   - first:
-      213: -5611783429214371130
-    second: BowlingAlleyFloorPink_9
+      213: 6431515502490073226
+    second: Ball Wizard Anims_9
   - first:
-      213: 360903234219675455
-    second: BowlingAlleyFloorPink_10
+      213: -8685121365893805488
+    second: Ball Wizard Anims_10
   - first:
-      213: 3070180602204528889
-    second: BowlingAlleyFloorPink_11
+      213: 1167835320685158479
+    second: Ball Wizard Anims_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -147,253 +147,253 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BowlingAlleyFloorPink_0
+      name: Ball Wizard Anims_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
-        width: 32
-        height: 32
+        y: 192
+        width: 96
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 203c2e06e00f3ee20800000000000000
-      internalID: 3378808090003686146
+      spriteID: 96c298c8e6290e930800000000000000
+      internalID: 4170494258446937193
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BowlingAlleyFloorPink_1
+      name: Ball Wizard Anims_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 96
-        width: 32
-        height: 32
+        x: 96
+        y: 192
+        width: 96
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb490b5ee6cfc8670800000000000000
-      internalID: 8542480146445145278
+      spriteID: 1ddbffdcfaa4695f0800000000000000
+      internalID: -750330168974787119
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BowlingAlleyFloorPink_2
+      name: Ball Wizard Anims_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 96
-        width: 32
-        height: 32
+        x: 192
+        y: 192
+        width: 96
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6c78e427553ce1f0800000000000000
-      internalID: -1014377167667561365
+      spriteID: ca10afd3a3bacf130800000000000000
+      internalID: 3601942068625801644
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BowlingAlleyFloorPink_3
+      name: Ball Wizard Anims_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3319c8a969bba0a0800000000000000
+      internalID: -6869192943169105091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ball Wizard Anims_4
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f9a14950fee68ab0800000000000000
+      internalID: -5006051219718690313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ball Wizard Anims_5
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 463bcd8302ce4cde0800000000000000
+      internalID: -1313665568148245660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ball Wizard Anims_6
       rect:
         serializedVersion: 2
         x: 0
         y: 64
-        width: 32
-        height: 32
+        width: 96
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09e86987123d11760800000000000000
-      internalID: 7426949401221172880
+      spriteID: 55144b76151745360800000000000000
+      internalID: 7157470302244716885
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BowlingAlleyFloorPink_4
+      name: Ball Wizard Anims_7
       rect:
         serializedVersion: 2
-        x: 32
+        x: 96
         y: 64
-        width: 32
-        height: 32
+        width: 96
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb097f6278dd99810800000000000000
-      internalID: 1772691500891082943
+      spriteID: ee17873c3180e5020800000000000000
+      internalID: 2332310538001347054
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BowlingAlleyFloorPink_5
+      name: Ball Wizard Anims_8
       rect:
         serializedVersion: 2
-        x: 64
+        x: 192
         y: 64
-        width: 32
-        height: 32
+        width: 96
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6631b50e3e33ecb90800000000000000
-      internalID: -7219776098813668506
+      spriteID: 78d1c54a32d7315a0800000000000000
+      internalID: -6551755440859112057
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BowlingAlleyFloorPink_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 381e8701b2afe0540800000000000000
-      internalID: 4976189701157872003
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BowlingAlleyFloorPink_7
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fa466a0447f4cd930800000000000000
-      internalID: 4169294715757683887
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BowlingAlleyFloorPink_8
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e0e9e79248bfb6770800000000000000
-      internalID: 8605248058071883278
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BowlingAlleyFloorPink_9
+      name: Ball Wizard Anims_9
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 96
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c2014124b0fe12b0800000000000000
-      internalID: -5611783429214371130
+      spriteID: a88b65d1645514950800000000000000
+      internalID: 6431515502490073226
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BowlingAlleyFloorPink_10
+      name: Ball Wizard Anims_10
       rect:
         serializedVersion: 2
-        x: 32
+        x: 96
         y: 0
-        width: 32
-        height: 32
+        width: 96
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3f04f1549f220500800000000000000
-      internalID: 360903234219675455
+      spriteID: 05a8eba2220487780800000000000000
+      internalID: -8685121365893805488
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BowlingAlleyFloorPink_11
+      name: Ball Wizard Anims_11
       rect:
         serializedVersion: 2
-        x: 64
+        x: 192
         y: 0
-        width: 32
-        height: 32
+        width: 96
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f022bebdf87b9a20800000000000000
-      internalID: 3070180602204528889
+      spriteID: f40e795690cf43010800000000000000
+      internalID: 1167835320685158479
       vertices: []
       indices: 
       edges: []

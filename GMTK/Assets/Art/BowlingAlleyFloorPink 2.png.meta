@@ -1,52 +1,61 @@
 fileFormatVersion: 2
-guid: da41c5886fc90e94e875bf3eaa083c38
+guid: 39505fbc4d219f74d8a115eb941454e6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3021010422707684272
-    second: BowlingAlleyFloorPink 1_0
+      213: -3202501041106369115
+    second: BowlingAlleyFloorPink 2_0
   - first:
-      213: -7671960720936393564
-    second: BowlingAlleyFloorPink 1_1
+      213: -5892800261844976934
+    second: BowlingAlleyFloorPink 2_1
   - first:
-      213: 7419287842935598785
-    second: BowlingAlleyFloorPink 1_2
+      213: 139776019402645651
+    second: BowlingAlleyFloorPink 2_2
   - first:
-      213: 7309003198042554928
-    second: BowlingAlleyFloorPink 1_3
+      213: 1773806286364122830
+    second: BowlingAlleyFloorPink 2_3
   - first:
-      213: 1184119565525013509
-    second: BowlingAlleyFloorPink 1_4
+      213: 5637420799179493681
+    second: BowlingAlleyFloorPink 2_4
   - first:
-      213: 2894005565604573875
-    second: BowlingAlleyFloorPink 1_5
+      213: 7914639950355555318
+    second: BowlingAlleyFloorPink 2_5
   - first:
-      213: 5765067364221339293
-    second: BowlingAlleyFloorPink 1_6
+      213: 1032440103869501412
+    second: BowlingAlleyFloorPink 2_6
   - first:
-      213: 6763705040917721469
-    second: BowlingAlleyFloorPink 1_7
+      213: -1339049986094777985
+    second: BowlingAlleyFloorPink 2_7
   - first:
-      213: 2165359529268346943
-    second: BowlingAlleyFloorPink 1_8
+      213: -5319138097011918383
+    second: BowlingAlleyFloorPink 2_8
   - first:
-      213: 8836148979088386417
-    second: BowlingAlleyFloorPink 1_9
+      213: -6123023825907142952
+    second: BowlingAlleyFloorPink 2_9
   - first:
-      213: -2910306650262660364
-    second: BowlingAlleyFloorPink 1_10
+      213: -6652230570088774055
+    second: BowlingAlleyFloorPink 2_10
   - first:
-      213: -3770817358750874081
-    second: BowlingAlleyFloorPink 1_11
+      213: -8501329525465347625
+    second: BowlingAlleyFloorPink 2_11
   - first:
-      213: 368257585591045456
-    second: BowlingAlleyFloorPink 1_12
+      213: 133270993643386738
+    second: BowlingAlleyFloorPink 2_12
   - first:
-      213: -3758227494411054313
-    second: BowlingAlleyFloorPink 1_13
+      213: -1001934936191843798
+    second: BowlingAlleyFloorPink 2_13
   - first:
-      213: -2008881494439051358
-    second: BowlingAlleyFloorPink 1_14
+      213: 2925350618594133364
+    second: BowlingAlleyFloorPink 2_14
+  - first:
+      213: 5644363286917335179
+    second: BowlingAlleyFloorPink 2_15
+  - first:
+      213: -3271919958265017656
+    second: BowlingAlleyFloorPink 2_16
+  - first:
+      213: 2691061776898652911
+    second: BowlingAlleyFloorPink 2_17
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -156,7 +165,70 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BowlingAlleyFloorPink 1_0
+      name: BowlingAlleyFloorPink 2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a5490c454e6e83d0800000000000000
+      internalID: -3202501041106369115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BowlingAlleyFloorPink 2_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adab66c1261983ea0800000000000000
+      internalID: -5892800261844976934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BowlingAlleyFloorPink 2_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 390ec909c8590f100800000000000000
+      internalID: 139776019402645651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BowlingAlleyFloorPink 2_3
       rect:
         serializedVersion: 2
         x: 0
@@ -170,14 +242,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b38e3439f8cce920800000000000000
-      internalID: 3021010422707684272
+      spriteID: ece961f5b63dd9810800000000000000
+      internalID: 1773806286364122830
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BowlingAlleyFloorPink 1_1
+      name: BowlingAlleyFloorPink 2_4
       rect:
         serializedVersion: 2
         x: 32
@@ -191,14 +263,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a426d14f58b78590800000000000000
-      internalID: -7671960720936393564
+      spriteID: 1311e7839542c3e40800000000000000
+      internalID: 5637420799179493681
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BowlingAlleyFloorPink 1_2
+      name: BowlingAlleyFloorPink 2_5
       rect:
         serializedVersion: 2
         x: 64
@@ -212,14 +284,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ceec8cebfa96f660800000000000000
-      internalID: 7419287842935598785
+      spriteID: 6f3ee0ee91376dd60800000000000000
+      internalID: 7914639950355555318
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BowlingAlleyFloorPink 1_3
+      name: BowlingAlleyFloorPink 2_6
       rect:
         serializedVersion: 2
         x: 0
@@ -233,14 +305,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03245811fabce6560800000000000000
-      internalID: 7309003198042554928
+      spriteID: 4ef420bedc6f35e00800000000000000
+      internalID: 1032440103869501412
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BowlingAlleyFloorPink 1_4
+      name: BowlingAlleyFloorPink 2_7
       rect:
         serializedVersion: 2
         x: 32
@@ -254,14 +326,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50455ba9876de6010800000000000000
-      internalID: 1184119565525013509
+      spriteID: f79345ad12dba6de0800000000000000
+      internalID: -1339049986094777985
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BowlingAlleyFloorPink 1_5
+      name: BowlingAlleyFloorPink 2_8
       rect:
         serializedVersion: 2
         x: 64
@@ -275,14 +347,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b23dd39ab2992820800000000000000
-      internalID: 2894005565604573875
+      spriteID: 1d97b503510ae26b0800000000000000
+      internalID: -5319138097011918383
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BowlingAlleyFloorPink 1_6
+      name: BowlingAlleyFloorPink 2_9
       rect:
         serializedVersion: 2
         x: 0
@@ -296,14 +368,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d964c9e1932a10050800000000000000
-      internalID: 5765067364221339293
+      spriteID: 8de2d818546a60ba0800000000000000
+      internalID: -6123023825907142952
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BowlingAlleyFloorPink 1_7
+      name: BowlingAlleyFloorPink 2_10
       rect:
         serializedVersion: 2
         x: 32
@@ -317,14 +389,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d717b6926e18ddd50800000000000000
-      internalID: 6763705040917721469
+      spriteID: 9564dd1aa878ea3a0800000000000000
+      internalID: -6652230570088774055
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BowlingAlleyFloorPink 1_8
+      name: BowlingAlleyFloorPink 2_11
       rect:
         serializedVersion: 2
         x: 64
@@ -338,14 +410,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f300c01f407ec0e10800000000000000
-      internalID: 2165359529268346943
+      spriteID: 7d9091ca6d5350a80800000000000000
+      internalID: -8501329525465347625
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BowlingAlleyFloorPink 1_9
+      name: BowlingAlleyFloorPink 2_12
       rect:
         serializedVersion: 2
         x: 0
@@ -359,14 +431,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1796ef83eae40aa70800000000000000
-      internalID: 8836148979088386417
+      spriteID: 2773afa334979d100800000000000000
+      internalID: 133270993643386738
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BowlingAlleyFloorPink 1_10
+      name: BowlingAlleyFloorPink 2_13
       rect:
         serializedVersion: 2
         x: 32
@@ -380,14 +452,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4fa13a365838c97d0800000000000000
-      internalID: -2910306650262660364
+      spriteID: a224b38eb796812f0800000000000000
+      internalID: -1001934936191843798
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BowlingAlleyFloorPink 1_11
+      name: BowlingAlleyFloorPink 2_14
       rect:
         serializedVersion: 2
         x: 64
@@ -401,14 +473,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1607c2479d5babc0800000000000000
-      internalID: -3770817358750874081
+      spriteID: 475c5c073eee89820800000000000000
+      internalID: 2925350618594133364
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BowlingAlleyFloorPink 1_12
+      name: BowlingAlleyFloorPink 2_15
       rect:
         serializedVersion: 2
         x: 0
@@ -422,14 +494,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05d4ffea2505c1500800000000000000
-      internalID: 368257585591045456
+      spriteID: b88c6fb118ec45e40800000000000000
+      internalID: 5644363286917335179
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BowlingAlleyFloorPink 1_13
+      name: BowlingAlleyFloorPink 2_16
       rect:
         serializedVersion: 2
         x: 32
@@ -443,14 +515,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 713d58a710818dbc0800000000000000
-      internalID: -3758227494411054313
+      spriteID: 8ca4a12222ec792d0800000000000000
+      internalID: -3271919958265017656
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BowlingAlleyFloorPink 1_14
+      name: BowlingAlleyFloorPink 2_17
       rect:
         serializedVersion: 2
         x: 64
@@ -464,8 +536,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2afba10ace40f14e0800000000000000
-      internalID: -2008881494439051358
+      spriteID: feafca0ad62985520800000000000000
+      internalID: 2691061776898652911
       vertices: []
       indices: 
       edges: []
