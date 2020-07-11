@@ -7,6 +7,7 @@ public class SpellObject : MonoBehaviour
     public Rigidbody2D spellRb;
     public float spellSpeed = 8;
     public float timeTilDestroy = 5;
+    public Elements_SO elementObj;
 
     // Start is called before the first frame update
     void Start()

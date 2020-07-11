@@ -308,9 +308,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -4.31}
+  m_Offset: {x: 0, y: -0.32}
   serializedVersion: 2
-  m_Radius: 0.66
+  m_Radius: 0.5
 --- !u!114 &310584120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,7 +326,7 @@ MonoBehaviour:
   maxSize: 3
   elementBullets: []
   spellPoint: {fileID: 1987291329}
-  currentSpell: {fileID: 5125307773039673084, guid: fee9e7458af544c4bab39c651ccccc9b,
+  currentSpell: {fileID: 4931456522168263839, guid: fee9e7458af544c4bab39c651ccccc9b,
     type: 3}
 --- !u!50 &310584121
 Rigidbody2D:
@@ -336,7 +336,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 310584118}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
