@@ -8,6 +8,8 @@ public class EnemySpawner : MonoBehaviour
     public float enemySpawnTimer = 2f;
     public float spawnerXAxisRange = 8f;
     public float timeToDestroyPin = 5f;
+    public bool isActivated = false;
+    public int enemiesToSpawn = 0;
 
     private Vector3 topScreenWall;
     private float timer = 0;
@@ -15,27 +17,29 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        var cam = Camera.main;
-        topScreenWall = cam.ScreenToWorldPoint(new Vector3(cam.pixelWidth / 2, cam.pixelHeight, 1));
+        //var cam = Camera.main;
+        //topScreenWall = cam.ScreenToWorldPoint(new Vector3(cam.pixelWidth / 2, cam.pixelHeight, 1));
+        //transform.position = new Vector3(topScreenWall.x, topScreenWall.y, topScreenWall.z);
         Physics2D.gravity = new Vector2(0, 0);
-        transform.position = new Vector3(topScreenWall.x, topScreenWall.y, topScreenWall.z);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(timer <= 0 && EnemyManager.instance.enemiesLeftToSpawn > 0)
+        if(timer <= 0 && enemiesToSpawn > 0 && isActivated)
         {
-            Vector3 spawnPos = new Vector3(Random.Range(-spawnerXAxisRange, spawnerXAxisRange), transform.position.y, 0);
+            Vector3 spawnPos = new Vector3(Random.Range(transform.position.x - spawnerXAxisRange, transform.position.x + spawnerXAxisRange), transform.position.y, 0);
             GameObject newEnemy = Instantiate(enemyPrefab, spawnPos, Quaternion.Euler(new Vector3(0, 0, 0)));
+            
             int rndElementIdx = Random.Range(0, SlotMachineManager.instance.allElementsObjs.Length);
+            
             newEnemy.GetComponent<ElementComp>().elementObj = SlotMachineManager.instance.allElementsObjs[rndElementIdx];
             newEnemy.GetComponent<ElementComp>().UpdateSelfElement();
 
             Destroy(newEnemy, timeToDestroyPin);
             
             EnemyManager.instance.enemiesOnField.Add(newEnemy);
-            EnemyManager.instance.enemiesLeftToSpawn--;
+            enemiesToSpawn--;
 
             timer = enemySpawnTimer;
         }

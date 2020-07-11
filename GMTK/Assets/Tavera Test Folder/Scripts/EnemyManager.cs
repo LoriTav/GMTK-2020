@@ -6,9 +6,13 @@ public class EnemyManager : MonoBehaviour
 {
     public static EnemyManager instance;
     public List<GameObject> enemiesOnField;
-    public EnemySpawner enemySpawner;
-    public int enemiesToSpawn;
-    public int enemiesLeftToSpawn = 0;
+    public int totalEnemiesToSpawn;
+    public EnemySpawner[] spawners;
+    public float activateSpawnersTimer = 2f;
+
+    private float timer = 0;
+    private int currentSpawnerIdx;
+    private int indSpawnerToSpawn;
 
     private void Awake()
     {
@@ -29,15 +33,47 @@ public class EnemyManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        enemiesLeftToSpawn = enemiesToSpawn;
+        indSpawnerToSpawn = (int)totalEnemiesToSpawn / spawners.Length;
+        currentSpawnerIdx = 0;
+        timer = activateSpawnersTimer;
+
+        foreach (var spawner in spawners)
+        {
+            spawner.enemiesToSpawn = indSpawnerToSpawn;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(enemiesOnField.Count <= 0)
+        if(enemiesOnField.Count <= 0 && timer <= 0)
         {
-            enemiesLeftToSpawn = enemiesToSpawn;
+            foreach(var spawner in spawners)
+            {
+                spawner.enemiesToSpawn = indSpawnerToSpawn;
+            }
+
+            timer = activateSpawnersTimer;
+            currentSpawnerIdx = 0;
+        }
+
+        timer -= Time.deltaTime;
+        
+        if(currentSpawnerIdx < spawners.Length && timer <= 0)
+        {
+            spawners[currentSpawnerIdx].isActivated = spawners[currentSpawnerIdx].enemiesToSpawn > 0;
+        
+            if(spawners[currentSpawnerIdx].enemiesToSpawn <= 0)
+            {
+                if(currentSpawnerIdx + 1 >= spawners.Length)
+                {
+                    return;
+                }
+                else
+                {
+                    currentSpawnerIdx++;
+                }
+            }
         }
     }
 }
