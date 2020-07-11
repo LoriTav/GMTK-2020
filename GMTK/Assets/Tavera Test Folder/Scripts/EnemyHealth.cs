@@ -46,4 +46,9 @@ public class EnemyHealth : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    
+    private void OnDestroy()
+    {
+        EnemyManager.instance.enemiesOnField.Remove(this.gameObject);
+    }
 }

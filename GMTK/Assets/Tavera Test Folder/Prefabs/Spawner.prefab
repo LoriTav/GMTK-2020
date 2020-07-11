@@ -46,6 +46,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 0}
   enemySpawnTimer: 2
+  spawnerXAxisRange: 8
+  timeToDestroyPin: 5
+  isActivated: 0
+  enemiesSpawned: 0
 --- !u!212 &1754156938494388061
 SpriteRenderer:
   m_ObjectHideFlags: 0
