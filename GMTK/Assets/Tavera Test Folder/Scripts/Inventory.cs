@@ -18,7 +18,7 @@ public class Inventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && EnemyManager.instance.enemiesOnField.Count > 0 && elementBullets.Count > 0)
         {
             elementBullets.Remove(elementBullets[0]);
             

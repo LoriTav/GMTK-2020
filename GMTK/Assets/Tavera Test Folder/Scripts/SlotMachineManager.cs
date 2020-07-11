@@ -34,6 +34,8 @@ public class SlotMachineManager : MonoBehaviour
 
     public void UpdateInventorySlots()
     {
+        if (ScoreManager.instance.isGameOver) { return; }
+
         for(int i = 0; i < 3; i++)
         {
             int rndElementIndex = Random.Range(0, allElementsObjs.Length);

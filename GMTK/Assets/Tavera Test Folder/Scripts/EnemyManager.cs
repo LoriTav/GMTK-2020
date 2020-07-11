@@ -9,6 +9,7 @@ public class EnemyManager : MonoBehaviour
     public int totalEnemiesToSpawn;
     public EnemySpawner[] spawners;
     public float activateSpawnersTimer = 2f;
+    public bool isActivated = false;
 
     private float timer = 0;
     private int currentSpawnerIdx;
@@ -33,6 +34,11 @@ public class EnemyManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        RestartEnemyManager();
+    }
+
+    public void RestartEnemyManager()
+    {
         indSpawnerToSpawn = (int)totalEnemiesToSpawn / spawners.Length;
         currentSpawnerIdx = 0;
         timer = activateSpawnersTimer;
@@ -46,6 +52,12 @@ public class EnemyManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.F) && enemiesOnField.Count != 0)
+        {
+            Destroy(enemiesOnField[0]);
+            ScoreManager.instance.IncreaseEnemyKillInCurrentFrame();
+        }
+
         if(enemiesOnField.Count <= 0 && timer <= 0)
         {
             foreach(var spawner in spawners)

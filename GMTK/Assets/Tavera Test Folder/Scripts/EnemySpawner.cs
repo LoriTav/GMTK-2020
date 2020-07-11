@@ -26,7 +26,7 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(timer <= 0 && enemiesToSpawn > 0 && isActivated)
+        if(timer <= 0 && enemiesToSpawn > 0 && isActivated && EnemyManager.instance.isActivated)
         {
             Vector3 spawnPos = new Vector3(Random.Range(transform.position.x - spawnerXAxisRange, transform.position.x + spawnerXAxisRange), transform.position.y, 0);
             GameObject newEnemy = Instantiate(enemyPrefab, spawnPos, Quaternion.Euler(new Vector3(0, 0, 0)));
