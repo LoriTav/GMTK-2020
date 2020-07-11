@@ -7,6 +7,7 @@ public class Elements_SO : ScriptableObject
 {
     public string elementName;
     public Color color;
+    public Sprite elementSprite;
 
     // Start is called before the first frame update
     void Start()
