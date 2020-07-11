@@ -1,43 +1,43 @@
 fileFormatVersion: 2
-guid: 3af41c16f8c83374890833db93f79bb8
+guid: 50b8e9dfee7975d41a0b29ff76c6d148
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4789595746878669988
-    second: BowlingAlleyFloorBlue_0
+      213: 4208060268530225098
+    second: TerminalSpriteAnim_0
   - first:
-      213: 6140790567450071896
-    second: BowlingAlleyFloorBlue_1
+      213: -2088408703006672286
+    second: TerminalSpriteAnim_1
   - first:
-      213: 1375909174563946158
-    second: BowlingAlleyFloorBlue_2
+      213: 3685654760826659235
+    second: TerminalSpriteAnim_2
   - first:
-      213: 1855373137667098302
-    second: BowlingAlleyFloorBlue_3
+      213: -456821034197448705
+    second: TerminalSpriteAnim_3
   - first:
-      213: 8648444018872885470
-    second: BowlingAlleyFloorBlue_4
+      213: 7550959669907939187
+    second: TerminalSpriteAnim_4
   - first:
-      213: 930202680532011566
-    second: BowlingAlleyFloorBlue_5
+      213: 6991893746986715535
+    second: TerminalSpriteAnim_5
   - first:
-      213: -4247939333115066087
-    second: BowlingAlleyFloorBlue_6
+      213: -2631277578701539628
+    second: TerminalSpriteAnim_6
   - first:
-      213: 8175968467921491497
-    second: BowlingAlleyFloorBlue_7
+      213: -2481582180388718861
+    second: TerminalSpriteAnim_7
   - first:
-      213: 2304444271096291403
-    second: BowlingAlleyFloorBlue_8
+      213: 4656523713676487165
+    second: TerminalSpriteAnim_0
   - first:
-      213: -8046526354383916761
-    second: BowlingAlleyFloorBlue_9
+      213: 1844962135444503971
+    second: TerminalSpriteAnim_1
   - first:
-      213: 3753488967331382789
-    second: BowlingAlleyFloorBlue_10
+      213: -7791113332916603741
+    second: TerminalSpriteAnim_2
   - first:
-      213: -902817547981565925
-    second: BowlingAlleyFloorBlue_11
+      213: 1278673595283605509
+    second: TerminalSpriteAnim_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -83,7 +83,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -147,202 +147,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BowlingAlleyFloorBlue_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a4cc6694ff087240800000000000000
-      internalID: 4789595746878669988
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BowlingAlleyFloorBlue_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8535eec5c78783550800000000000000
-      internalID: 6140790567450071896
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BowlingAlleyFloorBlue_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eaeb519ba16381310800000000000000
-      internalID: 1375909174563946158
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BowlingAlleyFloorBlue_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eb6037cd90c9fb910800000000000000
-      internalID: 1855373137667098302
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BowlingAlleyFloorBlue_4
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ed025c48302750870800000000000000
-      internalID: 8648444018872885470
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BowlingAlleyFloorBlue_5
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e2a0a36d86eb8ec00800000000000000
-      internalID: 930202680532011566
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BowlingAlleyFloorBlue_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 919444edea94c05c0800000000000000
-      internalID: -4247939333115066087
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BowlingAlleyFloorBlue_7
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9265141e000e67170800000000000000
-      internalID: 8175968467921491497
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BowlingAlleyFloorBlue_8
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b40e067ead70bff10800000000000000
-      internalID: 2304444271096291403
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BowlingAlleyFloorBlue_9
+      name: TerminalSpriteAnim_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 32
-        height: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -350,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 721b02bb9eef45090800000000000000
-      internalID: -8046526354383916761
+      spriteID: df9aed175ab4f9040800000000000000
+      internalID: 4656523713676487165
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BowlingAlleyFloorBlue_10
+      name: TerminalSpriteAnim_1
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 32
-        height: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -371,20 +182,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50682263452171430800000000000000
-      internalID: 3753488967331382789
+      spriteID: 3ad3733894f9a9910800000000000000
+      internalID: 1844962135444503971
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BowlingAlleyFloorBlue_11
+      name: TerminalSpriteAnim_2
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 32
-        height: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -392,8 +203,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b10d193393c8873f0800000000000000
-      internalID: -902817547981565925
+      spriteID: 3a432bae3b760e390800000000000000
+      internalID: -7791113332916603741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TerminalSpriteAnim_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5080d863cd2ceb110800000000000000
+      internalID: 1278673595283605509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TerminalSpriteAnim_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37fd92620d56ac860800000000000000
+      internalID: 7550959669907939187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TerminalSpriteAnim_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f890b687152380160800000000000000
+      internalID: 6991893746986715535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TerminalSpriteAnim_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d67b08bbf2db7bd0800000000000000
+      internalID: -2631277578701539628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TerminalSpriteAnim_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f6bdf8a726af8dd0800000000000000
+      internalID: -2481582180388718861
       vertices: []
       indices: 
       edges: []
