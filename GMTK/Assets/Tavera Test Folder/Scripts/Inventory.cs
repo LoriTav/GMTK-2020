@@ -6,6 +6,8 @@ public class Inventory : MonoBehaviour
 {
     public int maxSize = 3;
     public List<Elements_SO> elementBullets;
+    public Transform spellPoint;
+    public SpellObject currentSpell;
 
     // Start is called before the first frame update
     void Start()
@@ -18,8 +20,18 @@ public class Inventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        //aim
+        Vector3 delta = Camera.main.ScreenToWorldPoint(Input.mousePosition) - spellPoint.position;
+        float zRotation = Mathf.Atan2(delta.y, delta.x) * Mathf.Rad2Deg;
+        spellPoint.rotation = Quaternion.Euler(0f, 0f, zRotation - 90);
+
+
+        if(Input.GetKeyDown(KeyCode.Mouse0))
         {
+           // currentSpell.GetComponent<SpriteRenderer>().color = elementBullets[0].color;
+            //spawn spell
+            Instantiate(currentSpell, spellPoint.position, spellPoint.rotation);
+
             elementBullets.Remove(elementBullets[0]);
             
             if(elementBullets.Count <= 0)
