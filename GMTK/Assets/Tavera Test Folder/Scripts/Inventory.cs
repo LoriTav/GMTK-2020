@@ -12,6 +12,7 @@ public class Inventory : MonoBehaviour
     {
         elementBullets = new List<Elements_SO>();
         SlotMachineManager.instance.UpdateInventorySlots();
+        gameObject.GetComponent<SpriteRenderer>().sprite = elementBullets[0].elementSprite;
     }
 
     // Update is called once per frame
@@ -25,6 +26,8 @@ public class Inventory : MonoBehaviour
             {
                 SlotMachineManager.instance.UpdateInventorySlots();
             }
+
+            gameObject.GetComponent<SpriteRenderer>().sprite = elementBullets[0].elementSprite;
         }
     }
 

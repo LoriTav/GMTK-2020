@@ -5,9 +5,10 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab;
-    public float enemySpawnTimer = 2;
-    public float spawnerXAxisRange = 8;
-    
+    public float enemySpawnTimer = 2f;
+    public float spawnerXAxisRange = 8f;
+    public float timeToDestroyPin = 5f;
+
     private Vector3 topScreenWall;
     private float timer = 0;
 
@@ -23,12 +24,19 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(timer <= 0)
+        if(timer <= 0 && EnemyManager.instance.enemiesLeftToSpawn > 0)
         {
             Vector3 spawnPos = new Vector3(Random.Range(-spawnerXAxisRange, spawnerXAxisRange), transform.position.y, 0);
-            var newEnemy = Instantiate(enemyPrefab, spawnPos, Quaternion.Euler(new Vector3(0, 0, 0)));
-            Destroy(newEnemy, 3.0f);
+            GameObject newEnemy = Instantiate(enemyPrefab, spawnPos, Quaternion.Euler(new Vector3(0, 0, 0)));
+            int rndElementIdx = Random.Range(0, SlotMachineManager.instance.allElementsObjs.Length);
+            newEnemy.GetComponent<ElementComp>().elementObj = SlotMachineManager.instance.allElementsObjs[rndElementIdx];
+            newEnemy.GetComponent<ElementComp>().UpdateSelfElement();
+
+            Destroy(newEnemy, timeToDestroyPin);
             
+            EnemyManager.instance.enemiesOnField.Add(newEnemy);
+            EnemyManager.instance.enemiesLeftToSpawn--;
+
             timer = enemySpawnTimer;
         }
         

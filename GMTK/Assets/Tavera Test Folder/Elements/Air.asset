@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   elementName: Air
   color: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 1}
+  elementSprite: {fileID: 4170494258446937193, guid: 3aa2c50696171c046adbf0a99f387a20,
+    type: 3}
