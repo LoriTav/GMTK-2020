@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public static bool isRandomizingSpell = false;
     public bool canMove = true;
     public Animator PlayerAnim;
+    public AudioSource audioSource;
 
     // Start is called before the first frame update
     void Awake()
@@ -19,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
         PlayerRb.constraints = RigidbodyConstraints2D.FreezeRotation;
         PlayerRb.constraints = RigidbodyConstraints2D.FreezePositionY;
         PlayerAnim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -49,15 +51,26 @@ public class PlayerMovement : MonoBehaviour
             PlayerAnim.enabled = true;
             PlayerRb.velocity = new Vector2(-speed, PlayerRb.velocity.y);
             transform.eulerAngles = new Vector3(0, 180, 0);
+
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
         }
         else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             PlayerAnim.enabled = true;
             PlayerRb.velocity = new Vector2(speed, PlayerRb.velocity.y);
             transform.eulerAngles = new Vector3(0, 0, 0);
+
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
         }
         else
         {
+            audioSource.Stop();
             PlayerAnim.enabled = false;
             PlayerRb.velocity = new Vector2(0, 0); 
         }

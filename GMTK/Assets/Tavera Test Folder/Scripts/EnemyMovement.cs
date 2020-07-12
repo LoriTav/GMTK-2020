@@ -15,6 +15,10 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position -= new Vector3(0, speed * Time.deltaTime, 0);
+        if(!GetComponent<EnemyHealth>().isDeath)
+            transform.position -= new Vector3(0, speed * Time.deltaTime, 0);
+        else
+            transform.position += new Vector3(0, speed * Time.deltaTime, 0);
+
     }
 }

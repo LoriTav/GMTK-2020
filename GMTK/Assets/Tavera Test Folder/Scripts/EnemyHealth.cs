@@ -5,22 +5,37 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public int health = 2;
+    private AudioSource audioSource;
+    public float deathDelay;
+    public RuntimeAnimatorController deathController;
+
+    private float deathTimer = 0;
+    private Animator animator;
+    
+    [HideInInspector]
+    public bool isDeath = false;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        audioSource = gameObject.GetComponent<AudioSource>();
+        animator = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(isDeath && deathTimer <= 0)
+        {
+            Destroy(gameObject);
+        }
 
+        deathTimer -= Time.deltaTime;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Bullet")
+        if (collision.gameObject.tag == "Bullet" && !isDeath)
         {
             ElementComp bulletElementComp = collision.gameObject.GetComponent<ElementComp>();
             ElementComp pinElementComp = GetComponent<ElementComp>();
@@ -35,7 +50,7 @@ public class EnemyHealth : MonoBehaviour
                 Destroy(collision.gameObject);
             }
         }
-        else if (collision.gameObject.tag == "Player")
+        else if (collision.gameObject.tag == "Player" && !isDeath)
         {
             health = 0;
         }
@@ -43,8 +58,23 @@ public class EnemyHealth : MonoBehaviour
         if(health <= 0)
         {
             ScoreManager.instance.IncreaseEnemyKillInCurrentFrame();
-            Destroy(gameObject);
+            DeathSequence();
         }
+    }
+
+    private void DeathSequence()
+    {
+        if(health <= 0) { return; }
+        
+        deathTimer = deathDelay;
+        isDeath = true;
+
+        AudioClip rndPinDownClip = SoundManager.instance.GetRandomPinHit();
+        audioSource.clip = rndPinDownClip;
+        audioSource.loop = false;
+        audioSource.Play();
+
+        animator.runtimeAnimatorController = deathController;
     }
 
     private void OnDestroy()

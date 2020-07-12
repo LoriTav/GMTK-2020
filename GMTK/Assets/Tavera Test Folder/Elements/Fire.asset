@@ -18,3 +18,4 @@ MonoBehaviour:
     type: 3}
   controller: {fileID: 9100000, guid: 90a6fd8a801619543985c33d22ed9d2e, type: 2}
   spellController: {fileID: 9100000, guid: 20e75468edbcd614c993a0389ba58c2d, type: 2}
+  audioClip: {fileID: 8300000, guid: 830a4a41c0d23404fb1cf9ba3037a0c6, type: 3}

@@ -18,7 +18,7 @@ public class ScoreManager : MonoBehaviour
     public bool isGameOver = false;
     public float framesLoadTimer = 3;
 
-    private float timer;
+    private float timer = 0;
 
     private void Awake()
     {
@@ -37,7 +37,7 @@ public class ScoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentFrameIdx = 0;
+        ResetScoreManager();
     }
 
     // Update is called once per frame
@@ -99,6 +99,19 @@ public class ScoreManager : MonoBehaviour
     private void LoadFrameSequence()
     {
         EnemyManager.instance.RestartEnemyManager();
+        timer = framesLoadTimer;
+    }
+
+    public void ResetScoreManager()
+    {
+        foreach(Frame frame in frames)
+        {
+            frame.enemiesKilled = 0;
+            frame.score = 0;
+        }
+
+        isGameOver = false;
+        currentFrameIdx = 0;
         timer = framesLoadTimer;
     }
 }
