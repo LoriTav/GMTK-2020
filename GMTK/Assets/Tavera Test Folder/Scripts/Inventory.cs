@@ -19,7 +19,7 @@ public class Inventory : MonoBehaviour
 
         // Updates animator and sprite for first time
         gameObject.GetComponent<SpriteRenderer>().sprite = elementBullets[0].elementSprite;
-        gameObject.GetComponent<Animator>().runtimeAnimatorController = elementBullets[0].controller;
+        gameObject.GetComponent<Animator>().runtimeAnimatorController = elementBullets[0].ballController;
         gameObject.GetComponent<Animator>().enabled = true;
 
         timeTweenShots = 0;
@@ -52,7 +52,7 @@ public class Inventory : MonoBehaviour
             }
 
             // Update animator
-            gameObject.GetComponent<Animator>().runtimeAnimatorController = elementBullets[0].controller;
+            gameObject.GetComponent<Animator>().runtimeAnimatorController = elementBullets[0].ballController;
             gameObject.GetComponent<Animator>().enabled = true;
 
             gameObject.GetComponent<SpriteRenderer>().sprite = elementBullets[0].elementSprite;

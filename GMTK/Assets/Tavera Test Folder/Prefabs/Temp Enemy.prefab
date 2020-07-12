@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 526480980363172928}
   - component: {fileID: 526480980363172929}
   - component: {fileID: 526480980363172934}
-  - component: {fileID: 526480980363172941}
   - component: {fileID: 526480980363172940}
+  - component: {fileID: 526480980363172941}
   - component: {fileID: 4917943063044699787}
   - component: {fileID: 1990292158597480232}
   - component: {fileID: 6989765795835954151}
@@ -114,9 +114,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
-  deathDelay: 0
+  deathDelay: 2
   deathController: {fileID: 9100000, guid: 42a94a1bab5dda741994f48c231cd9a5, type: 2}
   isDeath: 0
+--- !u!114 &526480980363172940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526480980363172935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e6c8f9986aa49489a2337e739ab720, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1.5
 --- !u!50 &526480980363172941
 Rigidbody2D:
   serializedVersion: 4
@@ -138,19 +151,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
---- !u!114 &526480980363172940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 526480980363172935}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1e6c8f9986aa49489a2337e739ab720, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1.5
 --- !u!95 &4917943063044699787
 Animator:
   serializedVersion: 3
