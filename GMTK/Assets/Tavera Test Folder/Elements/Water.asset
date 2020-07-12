@@ -16,3 +16,6 @@ MonoBehaviour:
   color: {r: 0, g: 0.8506594, b: 1, a: 1}
   elementSprite: {fileID: 7157470302244716885, guid: 3aa2c50696171c046adbf0a99f387a20,
     type: 3}
+  controller: {fileID: 9100000, guid: 2580b2769c1c0af44bddc6446904f721, type: 2}
+  spellController: {fileID: 9100000, guid: db17a4cda941d4f4ca25228df12f3a24, type: 2}
+  audioClip: {fileID: 8300000, guid: a953ffb896c533248ba734997ff85d87, type: 3}

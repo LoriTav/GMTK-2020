@@ -5,47 +5,76 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public int health = 2;
+    private AudioSource audioSource;
+    public float deathDelay;
+    public RuntimeAnimatorController deathController;
+
+    private float deathTimer = 0;
+    private Animator animator;
+    
+    [HideInInspector]
+    public bool isDeath = false;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        audioSource = gameObject.GetComponent<AudioSource>();
+        animator = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(isDeath && deathTimer <= 0)
+        {
+            Destroy(gameObject);
+        }
 
+        deathTimer -= Time.deltaTime;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Bullet")
+        if (collision.gameObject.tag == "Bullet" && !isDeath)
         {
             ElementComp bulletElementComp = collision.gameObject.GetComponent<ElementComp>();
             ElementComp pinElementComp = GetComponent<ElementComp>();
 
             if (!bulletElementComp || !pinElementComp) { return; }
 
-            if (bulletElementComp.elementObj != pinElementComp.elementObj)
+            int damageTaken = bulletElementComp.elementObj == pinElementComp.elementObj ? 2 : 1;
+            health -= damageTaken;
+            
+            if(bulletElementComp.elementObj != pinElementComp.elementObj)
             {
-                health--;
-                Debug.Log(name + " Received damage");
                 Destroy(collision.gameObject);
             }
-
-            if ((bulletElementComp.elementObj == pinElementComp.elementObj) || health <= 0)
-            {
-                Debug.Log(name + " is dead");
-                Destroy(gameObject);
-            }
         }
-        else if (collision.gameObject.tag == "Player")
+        else if (collision.gameObject.tag == "Player" && !isDeath)
         {
             health = 0;
-            Debug.Log(name + " is dead");
-            Destroy(gameObject);
         }
+
+        if(health <= 0)
+        {
+            ScoreManager.instance.IncreaseEnemyKillInCurrentFrame();
+            DeathSequence();
+        }
+    }
+
+    private void DeathSequence()
+    {
+        if(health <= 0) { return; }
+        
+        deathTimer = deathDelay;
+        isDeath = true;
+
+        AudioClip rndPinDownClip = SoundManager.instance.GetRandomPinHit();
+        audioSource.clip = rndPinDownClip;
+        audioSource.loop = false;
+        audioSource.Play();
+
+        animator.runtimeAnimatorController = deathController;
     }
 
     private void OnDestroy()

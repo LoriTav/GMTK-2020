@@ -52,23 +52,6 @@ public class EnemyManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F) && enemiesOnField.Count != 0)
-        {
-            Destroy(enemiesOnField[0]);
-            ScoreManager.instance.IncreaseEnemyKillInCurrentFrame();
-        }
-
-        if(enemiesOnField.Count <= 0 && timer <= 0)
-        {
-            foreach(var spawner in spawners)
-            {
-                spawner.enemiesToSpawn = indSpawnerToSpawn;
-            }
-
-            timer = activateSpawnersTimer;
-            currentSpawnerIdx = 0;
-        }
-
         timer -= Time.deltaTime;
         
         if(currentSpawnerIdx < spawners.Length && timer <= 0)
