@@ -1,7 +1,52 @@
 fileFormatVersion: 2
 guid: 1df35a9e109409a438e00d49c0c2ec7b
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 5474147018814193563
+    second: shots elements transparent_0
+  - first:
+      213: -1311974738855606273
+    second: shots elements transparent_1
+  - first:
+      213: -5824005763404591004
+    second: shots elements transparent_2
+  - first:
+      213: -4601637658795711500
+    second: shots elements transparent_3
+  - first:
+      213: -4289738751943992970
+    second: shots elements transparent_4
+  - first:
+      213: 2771097359900352066
+    second: shots elements transparent_5
+  - first:
+      213: -5823307873492141629
+    second: shots elements transparent_6
+  - first:
+      213: -1976854056133968546
+    second: shots elements transparent_7
+  - first:
+      213: -320035282165883515
+    second: shots elements transparent_8
+  - first:
+      213: -4826047538526156223
+    second: shots elements transparent_9
+  - first:
+      213: -2634086290683051419
+    second: shots elements transparent_10
+  - first:
+      213: 3885633667721595674
+    second: shots elements transparent_11
+  - first:
+      213: 8548752486125128779
+    second: shots elements transparent_12
+  - first:
+      213: 3901668065879192026
+    second: shots elements transparent_13
+  - first:
+      213: -1544711986789906777
+    second: shots elements transparent_14
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -31,7 +76,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -40,12 +85,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -64,7 +109,43 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
