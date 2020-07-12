@@ -8,6 +8,8 @@ public class Inventory : MonoBehaviour
     public List<Elements_SO> elementBullets;
     public Transform spellPoint;
     public GameObject currentSpell;
+    public float timeTweenShots;
+    public float shotTimeReset = .35f;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +17,7 @@ public class Inventory : MonoBehaviour
         elementBullets = new List<Elements_SO>();
         SlotMachineManager.instance.UpdateInventorySlots();
         gameObject.GetComponent<SpriteRenderer>().sprite = elementBullets[0].elementSprite;
+        timeTweenShots = 0;
     }
 
     // Update is called once per frame
@@ -25,8 +28,10 @@ public class Inventory : MonoBehaviour
         float zRotation = Mathf.Atan2(delta.y, delta.x) * Mathf.Rad2Deg;
         spellPoint.rotation = Quaternion.Euler(0f, 0f, zRotation - 90);
 
+        timeTweenShots -= Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && EnemyManager.instance.enemiesOnField.Count > 0 && elementBullets.Count > 0)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && EnemyManager.instance.enemiesOnField.Count > 0 
+            && elementBullets.Count > 0  && timeTweenShots <= 0)
         {
             // currentSpell.GetComponent<SpriteRenderer>().color = elementBullets[0].color;
             //spawn spell
@@ -42,6 +47,7 @@ public class Inventory : MonoBehaviour
             }
 
             gameObject.GetComponent<SpriteRenderer>().sprite = elementBullets[0].elementSprite;
+            timeTweenShots = shotTimeReset;
         }
     }
 
