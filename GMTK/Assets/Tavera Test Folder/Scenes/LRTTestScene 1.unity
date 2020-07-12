@@ -333,6 +333,9 @@ MonoBehaviour:
     type: 3}
   timeTweenShots: 0
   shotTimeReset: 0.35
+  intervals: 0
+  BPM: 135
+  rythm: 0.89
 --- !u!50 &310584121
 Rigidbody2D:
   serializedVersion: 4

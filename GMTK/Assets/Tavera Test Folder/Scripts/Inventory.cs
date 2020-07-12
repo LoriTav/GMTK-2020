@@ -10,6 +10,9 @@ public class Inventory : MonoBehaviour
     public GameObject currentSpell;
     public float timeTweenShots;
     public float shotTimeReset = .35f;
+    public float BPM = 135;
+    public float rythm = 0.89f;
+    private float beatTimer = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -21,13 +24,21 @@ public class Inventory : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().sprite = elementBullets[0].elementSprite;
         gameObject.GetComponent<Animator>().runtimeAnimatorController = elementBullets[0].ballController;
         gameObject.GetComponent<Animator>().enabled = true;
+        rythm = (60f / BPM) * 2f;
 
         timeTweenShots = 0;
     }
-
+    private int fff = 0;
     // Update is called once per frame
     void Update()
     {
+        beatTimer -= Time.deltaTime;
+        if(beatTimer <= 0)
+        {
+            //Debug.Log("Hit" + ++fff);
+            beatTimer = rythm;
+        }
+
         //aim
         Vector3 delta = Camera.main.ScreenToWorldPoint(Input.mousePosition) - spellPoint.position;
         float zRotation = Mathf.Atan2(delta.y, delta.x) * Mathf.Rad2Deg;
@@ -38,6 +49,12 @@ public class Inventory : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0) && EnemyManager.instance.enemiesOnField.Count > 0 
             && elementBullets.Count > 0  && timeTweenShots <= 0)
         {
+            if(beatTimer <= .5)
+            {
+                Debug.Log("Hit beat");
+                ScoreManager.instance.IncreaseScoreInCurrentFrame(1000);
+            }
+
             //spawn spell
             GameObject spell = Instantiate(currentSpell, spellPoint.position, spellPoint.rotation);
             spell.GetComponent<ElementComp>().elementObj = elementBullets[0];
@@ -58,6 +75,7 @@ public class Inventory : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().sprite = elementBullets[0].elementSprite;
             timeTweenShots = shotTimeReset;
         }
+
     }
 
     public bool CanAddToInventory(Elements_SO newBullet)
