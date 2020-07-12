@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Air
   m_EditorClassIdentifier: 
   elementName: Air
-  color: {r: 1, g: 1, b: 1, a: 1}
   elementSprite: {fileID: 4170494258446937193, guid: 3aa2c50696171c046adbf0a99f387a20,
+    type: 3}
+  elementSymbol: {fileID: -4958694743987962842, guid: 97ed557415ee7bd4ea812c3bad5fa18f,
     type: 3}
   ballController: {fileID: 9100000, guid: 2470ebeb1d04fbf42be13a78e48bf8b9, type: 2}
   spellController: {fileID: 9100000, guid: 7296773087eb3734d9b370d4d63451b0, type: 2}

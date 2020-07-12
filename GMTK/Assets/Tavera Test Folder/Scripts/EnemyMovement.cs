@@ -5,6 +5,10 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     public float speed;
+    public bool canMove = true;
+    public float playerLoseLiveDelayTimer = .5f;
+
+    private float timer;
 
     // Start is called before the first frame update
     void Start()
@@ -15,9 +19,18 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!gameObject.GetComponent<EnemyHealth>().isDeath)
+        canMove = timer <= 0;
+
+        if(!gameObject.GetComponent<EnemyHealth>().isDeath && canMove)
             transform.position -= new Vector3(0, speed * Time.deltaTime, 0);
-        else
+        else if(gameObject.GetComponent<EnemyHealth>().isDeath && canMove)
             transform.position += new Vector3(0, speed * Time.deltaTime, 0);
+
+        timer -= Time.deltaTime;
+    }
+
+    public void AddDelay()
+    {
+        timer = playerLoseLiveDelayTimer;
     }
 }

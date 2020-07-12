@@ -17,9 +17,4 @@ public class ElementComp : MonoBehaviour
     {
         
     }
-
-    public void UpdateSelfElement()
-    {
-        GetComponent<SpriteRenderer>().color = elementObj.color;
-    }
 }

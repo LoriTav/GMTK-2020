@@ -34,7 +34,6 @@ public class EnemySpawner : MonoBehaviour
             int rndElementIdx = Random.Range(0, SlotMachineManager.instance.allElementsObjs.Length);
             
             newEnemy.GetComponent<ElementComp>().elementObj = SlotMachineManager.instance.allElementsObjs[rndElementIdx];
-            newEnemy.GetComponent<ElementComp>().UpdateSelfElement();
             
             EnemyManager.instance.enemiesOnField.Add(newEnemy);
             enemiesToSpawn--;

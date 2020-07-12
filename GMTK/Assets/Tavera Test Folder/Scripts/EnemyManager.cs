@@ -71,4 +71,12 @@ public class EnemyManager : MonoBehaviour
             }
         }
     }
+
+    public void DelayEnemies()
+    {
+        foreach(var enemy in enemiesOnField)
+        {
+            enemy.GetComponent<EnemyMovement>().AddDelay();
+        }
+    }
 }

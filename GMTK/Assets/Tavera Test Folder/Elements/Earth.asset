@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Earth
   m_EditorClassIdentifier: 
   elementName: Earth
-  color: {r: 1, g: 1, b: 1, a: 1}
   elementSprite: {fileID: 6431515502490073226, guid: 3aa2c50696171c046adbf0a99f387a20,
+    type: 3}
+  elementSymbol: {fileID: 228982225041904672, guid: 97ed557415ee7bd4ea812c3bad5fa18f,
     type: 3}
   ballController: {fileID: 9100000, guid: b203b36e8ce416f41834c1f7ece826fa, type: 2}
   spellController: {fileID: 9100000, guid: f41cfd97ff8fb5c43a472088e710cc09, type: 2}

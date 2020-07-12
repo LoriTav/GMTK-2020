@@ -6,11 +6,11 @@ using UnityEngine;
 public class Elements_SO : ScriptableObject
 {
     public string elementName;
-    public Color color;
     public Sprite elementSprite;
+    public Sprite elementSymbol;
+
     public RuntimeAnimatorController ballController;
     public RuntimeAnimatorController spellController;
-
     public RuntimeAnimatorController pinAliveController;
     public RuntimeAnimatorController crackPinAliveController;
     public RuntimeAnimatorController[] crackPinDeathController;
