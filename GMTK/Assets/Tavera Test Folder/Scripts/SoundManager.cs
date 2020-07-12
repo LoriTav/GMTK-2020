@@ -43,7 +43,7 @@ public class SoundManager : MonoBehaviour
         backgroundAS = GetComponent<AudioSource>();
         backgroundAS.loop = true;
 
-        playLevelBackground();
+        //playLevelBackground(SceneManager.GetActiveScene().buildIndex);
     }
 
     // Update is called once per frame
@@ -58,12 +58,12 @@ public class SoundManager : MonoBehaviour
         return pinsHit[rndIndex];
     }
 
-    public void playLevelBackground()
+    public void playLevelBackground(int lvlIndex)
     {
-        //int lvlIndex = SceneManager.GetActiveScene().buildIndex;
-        AudioClip audioToPlay = tempLvlIndex == 0 ? mainMenuTheme : bowlingTheme;
+        AudioClip audioToPlay = lvlIndex == 0 ? mainMenuTheme : bowlingTheme;
 
         UpdateNewVolumeSettings();
+        backgroundAS.Stop();
         backgroundAS.clip = audioToPlay;
         backgroundAS.Play();
     }
