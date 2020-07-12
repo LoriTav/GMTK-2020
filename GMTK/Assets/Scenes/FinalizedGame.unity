@@ -3075,7 +3075,7 @@ PrefabInstance:
     - target: {fileID: 1754156938494388060, guid: 141089d597e3cc3488dc606e25677073,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.27
+      value: -1.02
       objectReference: {fileID: 0}
     - target: {fileID: 1754156938494388060, guid: 141089d597e3cc3488dc606e25677073,
         type: 3}
@@ -3403,6 +3403,7 @@ MonoBehaviour:
   - score: 0
     enemiesKilled: 0
   currentFrameIdx: 0
+  currentLives: 3
   isGameOver: 0
   framesLoadTimer: 3
 --- !u!4 &735033290
@@ -4058,7 +4059,7 @@ PrefabInstance:
     - target: {fileID: 1754156938494388060, guid: 141089d597e3cc3488dc606e25677073,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.2
+      value: 4.54
       objectReference: {fileID: 0}
     - target: {fileID: 1754156938494388060, guid: 141089d597e3cc3488dc606e25677073,
         type: 3}
@@ -5094,7 +5095,7 @@ PrefabInstance:
     - target: {fileID: 1754156938494388060, guid: 141089d597e3cc3488dc606e25677073,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.92
+      value: -0.8699999
       objectReference: {fileID: 0}
     - target: {fileID: 1754156938494388060, guid: 141089d597e3cc3488dc606e25677073,
         type: 3}
@@ -9762,7 +9763,7 @@ PrefabInstance:
     - target: {fileID: 1754156938494388060, guid: 141089d597e3cc3488dc606e25677073,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.09
+      value: 4.45
       objectReference: {fileID: 0}
     - target: {fileID: 1754156938494388060, guid: 141089d597e3cc3488dc606e25677073,
         type: 3}
@@ -10849,6 +10850,11 @@ PrefabInstance:
     - target: {fileID: 699330181043158285, guid: d6f4bccd99a3f8a4ba6fff076178212e,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 699330181043158287, guid: d6f4bccd99a3f8a4ba6fff076178212e,
+        type: 3}
+      propertyPath: m_BodyType
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
