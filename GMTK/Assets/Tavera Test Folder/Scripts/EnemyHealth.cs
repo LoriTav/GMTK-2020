@@ -74,6 +74,7 @@ public class EnemyHealth : MonoBehaviour
         AudioClip rndPinDownClip = SoundManager.instance.GetRandomPinHit();
         audioSource.clip = rndPinDownClip;
         audioSource.loop = false;
+        audioSource.volume = SoundManager.instance.enableSoundEfx ? SoundManager.instance.soundEfxVolume : 0;
         audioSource.Play();
 
         animator.runtimeAnimatorController = GetComponent<ElementComp>().elementObj.crackPinDeathController[Random.Range(0, 2)];
