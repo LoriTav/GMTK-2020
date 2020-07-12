@@ -329,6 +329,8 @@ MonoBehaviour:
   spellPoint: {fileID: 1987291329}
   currentSpell: {fileID: 4931456522168263839, guid: fee9e7458af544c4bab39c651ccccc9b,
     type: 3}
+  timeTweenShots: 0
+  shotTimeReset: 0.35
 --- !u!50 &310584121
 Rigidbody2D:
   serializedVersion: 4
