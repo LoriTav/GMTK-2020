@@ -10,15 +10,19 @@ public class Inventory : MonoBehaviour
     public GameObject currentSpell;
     public float timeTweenShots;
     public float shotTimeReset = .35f;
+    public SpriteRenderer[] inventorySlots;
+    
     public float BPM = 135;
     public float rythm = 0.89f;
     private float beatTimer = 0;
+
 
     // Start is called before the first frame update
     void Start()
     {
         elementBullets = new List<Elements_SO>();
         SlotMachineManager.instance.UpdateInventorySlots();
+        UpdateUIInventorySlots();
 
         // Updates animator and sprite for first time
         gameObject.GetComponent<SpriteRenderer>().sprite = elementBullets[0].elementSprite;
@@ -58,7 +62,6 @@ public class Inventory : MonoBehaviour
             //spawn spell
             GameObject spell = Instantiate(currentSpell, spellPoint.position, spellPoint.rotation);
             spell.GetComponent<ElementComp>().elementObj = elementBullets[0];
-            spell.GetComponent<ElementComp>().UpdateSelfElement();
             spell.GetComponent<Animator>().runtimeAnimatorController = elementBullets[0].spellController;
 
             elementBullets.Remove(elementBullets[0]);
@@ -66,7 +69,9 @@ public class Inventory : MonoBehaviour
             if (elementBullets.Count <= 0)
             {
                 SlotMachineManager.instance.UpdateInventorySlots();
+                UpdateUIInventorySlots();
             }
+
 
             // Update animator
             gameObject.GetComponent<Animator>().runtimeAnimatorController = elementBullets[0].ballController;
@@ -85,5 +90,18 @@ public class Inventory : MonoBehaviour
         elementBullets.Add(newBullet);
 
         return true;
+    }
+
+    public void UpdateUIInventorySlots()
+    {
+        for(int i = 0; i < inventorySlots.Length; i++)
+        {
+            Debug.Log(i);
+            if(elementBullets[i] != null && elementBullets[i].elementSymbol)
+                inventorySlots[i].sprite = elementBullets[i].elementSymbol;
+            else
+                inventorySlots[i].sprite = null;
+
+        }
     }
 }
