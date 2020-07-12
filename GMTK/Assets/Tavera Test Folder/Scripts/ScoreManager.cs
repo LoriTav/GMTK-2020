@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 [Serializable]
 public class Frame
@@ -21,7 +20,6 @@ public class ScoreManager : MonoBehaviour
     public int currentLives = 3;
     public bool isGameOver = false;
     public float framesLoadTimer = 3;
-    public int totalScore = 0;
 
     private float timer = 0;
 
@@ -37,8 +35,6 @@ public class ScoreManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        totalScore = 0;
     }
 
     // Start is called before the first frame update
@@ -91,7 +87,6 @@ public class ScoreManager : MonoBehaviour
     {
         if(isGameOver) { return; }
         frames[currentFrameIdx].score += scoreToAdd;
-        totalScore += scoreToAdd;
     }
 
     public void IncreaseEnemyKillInCurrentFrame()
@@ -119,16 +114,10 @@ public class ScoreManager : MonoBehaviour
             frame.enemiesKilled = 0;
             frame.score = 0;
         }
-        if(SceneManager.GetActiveScene().buildIndex == 1)
-        {
-            foreach (var x in livesRends)
-                x.SetActive(true);
-        }
         currentLives = MaxLives;
         isGameOver = false;
         currentFrameIdx = 0;
         timer = framesLoadTimer;
-        totalScore = 0;
     }
 
     public void ReduceALive()
@@ -137,12 +126,12 @@ public class ScoreManager : MonoBehaviour
 
         currentLives--;
 
-        livesRends[0].SetActive(false);
+        Destroy(livesRends[0].gameObject);
+        livesRends.Remove(livesRends[0]);
 
         if(currentLives <= 0)
         {
             isGameOver = true;
-            SceneManager.LoadScene(2);
         }
     }
 }

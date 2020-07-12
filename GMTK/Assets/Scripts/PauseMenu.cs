@@ -25,7 +25,7 @@ public class PauseMenu : MonoBehaviour
                 //makes sure all but pause canvas are closed initially
                 PauseCanvas.enabled = true;
                 ControlsCanvas.enabled = false;
-                //OptionsCanvas.enabled = false;
+                OptionsCanvas.enabled = false;
             }
             else
             {
@@ -34,14 +34,14 @@ public class PauseMenu : MonoBehaviour
                 //close all canvases
                 PauseCanvas.enabled = false;
                 ControlsCanvas.enabled = false;
-                //OptionsCanvas.enabled = false;
+                OptionsCanvas.enabled = false;
             }
         }
     }
 
     public void OptionsButtonPressed()
     {
-        //OptionsCanvas.enabled = true;
+        OptionsCanvas.enabled = true;
         PauseCanvas.enabled = false;
         ControlsCanvas.enabled = false;
     }
@@ -69,7 +69,7 @@ public class PauseMenu : MonoBehaviour
     public void ControlsButtonPressed()
     {
         ControlsCanvas.enabled = true;
-        //OptionsCanvas.enabled = false;
+        OptionsCanvas.enabled = false;
         PauseCanvas.enabled = false;
     }
 
@@ -77,7 +77,7 @@ public class PauseMenu : MonoBehaviour
     {
         PauseCanvas.enabled = true;
         ControlsCanvas.enabled = false;
-        //OptionsCanvas.enabled = false;
+        OptionsCanvas.enabled = false;
     }
 
     public void ExitButtonPressed()

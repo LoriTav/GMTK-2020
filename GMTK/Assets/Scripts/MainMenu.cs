@@ -14,16 +14,9 @@ public class MainMenu : MonoBehaviour
     public Canvas ControlsCanvas;
     public Canvas OptionsCanvas;
 
-    private void Start()
-    {
-        SoundManager.instance.playLevelBackground(0);
-    }
-
     public void StartButtonPressed()
     {
-        ScoreManager.instance.ResetScoreManager();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        SoundManager.instance.playLevelBackground(1);
     }
 
     public void OptionsButtonPressed()
