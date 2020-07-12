@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Water
   m_EditorClassIdentifier: 
   elementName: Water
-  color: {r: 0, g: 0.8506594, b: 1, a: 1}
+  color: {r: 1, g: 1, b: 1, a: 1}
   elementSprite: {fileID: 7157470302244716885, guid: 3aa2c50696171c046adbf0a99f387a20,
     type: 3}
   ballController: {fileID: 9100000, guid: 2580b2769c1c0af44bddc6446904f721, type: 2}

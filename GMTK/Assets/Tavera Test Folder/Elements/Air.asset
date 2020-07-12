@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Air
   m_EditorClassIdentifier: 
   elementName: Air
-  color: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 1}
+  color: {r: 1, g: 1, b: 1, a: 1}
   elementSprite: {fileID: 4170494258446937193, guid: 3aa2c50696171c046adbf0a99f387a20,
     type: 3}
   ballController: {fileID: 9100000, guid: 2470ebeb1d04fbf42be13a78e48bf8b9, type: 2}
