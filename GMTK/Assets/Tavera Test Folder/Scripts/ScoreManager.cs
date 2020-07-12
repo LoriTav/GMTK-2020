@@ -14,6 +14,7 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
     public Frame[] frames;
+    public List<GameObject> livesRends;
     public int currentFrameIdx = 0;
     private int MaxLives = 3;
     public int currentLives = 3;
@@ -118,5 +119,20 @@ public class ScoreManager : MonoBehaviour
         isGameOver = false;
         currentFrameIdx = 0;
         timer = framesLoadTimer;
+    }
+
+    public void ReduceALive()
+    {
+        if(isGameOver) { return; }
+
+        currentLives--;
+
+        Destroy(livesRends[0].gameObject);
+        livesRends.Remove(livesRends[0]);
+
+        if(currentLives <= 0)
+        {
+            isGameOver = true;
+        }
     }
 }

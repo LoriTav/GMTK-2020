@@ -59,15 +59,15 @@ public class EnemyHealth : MonoBehaviour
 
         if (health <= 0 && !isDeath)
         {
+            DeathSequence();
             ScoreManager.instance.IncreaseEnemyKillInCurrentFrame();
             ScoreManager.instance.IncreaseScoreInCurrentFrame(500);
-            DeathSequence();
         }
     }
 
     private void DeathSequence()
     {
-        if(health > 0) { return; }
+        if(health > 0 || ScoreManager.instance.isGameOver) { return; }
         
         deathTimer = deathDelay;
         isDeath = true;

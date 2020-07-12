@@ -39,7 +39,6 @@ public class Inventory : MonoBehaviour
         beatTimer -= Time.deltaTime;
         if(beatTimer <= 0)
         {
-            //Debug.Log("Hit" + ++fff);
             beatTimer = rythm;
         }
 
@@ -51,7 +50,7 @@ public class Inventory : MonoBehaviour
         timeTweenShots -= Time.deltaTime;
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && EnemyManager.instance.enemiesOnField.Count > 0 
-            && elementBullets.Count > 0  && timeTweenShots <= 0)
+            && elementBullets.Count > 0  && timeTweenShots <= 0 && !ScoreManager.instance.isGameOver)
         {
             if(beatTimer <= .5)
             {
@@ -96,12 +95,10 @@ public class Inventory : MonoBehaviour
     {
         for(int i = 0; i < inventorySlots.Length; i++)
         {
-            Debug.Log(i);
             if(elementBullets[i] != null && elementBullets[i].elementSymbol)
                 inventorySlots[i].sprite = elementBullets[i].elementSymbol;
             else
                 inventorySlots[i].sprite = null;
-
         }
     }
 }

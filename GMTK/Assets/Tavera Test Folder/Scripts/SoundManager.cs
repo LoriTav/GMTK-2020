@@ -49,10 +49,6 @@ public class SoundManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.P))
-        {
-            UpdateNewVolumeSettings();
-        }
     }
 
     public AudioClip GetRandomPinHit()
@@ -75,7 +71,6 @@ public class SoundManager : MonoBehaviour
     public void UpdateNewVolumeSettings()
     {
         backgroundAS.volume = backgroundVolume;
-        enableSoundEfx = !enableSoundEfx;
     }
 
     public void enableBackgroundMusic()
