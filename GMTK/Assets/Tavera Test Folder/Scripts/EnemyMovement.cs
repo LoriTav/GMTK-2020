@@ -6,6 +6,7 @@ public class EnemyMovement : MonoBehaviour
 {
     public float speed;
     public bool canMove = true;
+    public bool stop = false;
     public float playerLoseLiveDelayTimer = .5f;
 
     private float timer;
@@ -27,10 +28,16 @@ public class EnemyMovement : MonoBehaviour
             transform.position += new Vector3(0, speed * Time.deltaTime, 0);
 
         timer -= Time.deltaTime;
+       
     }
 
     public void AddDelay()
     {
         timer = playerLoseLiveDelayTimer;
+    }
+
+    public void Move()
+    {
+
     }
 }

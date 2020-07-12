@@ -11,7 +11,9 @@ public class Inventory : MonoBehaviour
     public float timeTweenShots;
     public float shotTimeReset = .35f;
     public SpriteRenderer[] inventorySlots;
-    
+    public SpriteRenderer[] MachineSlots;
+    public SlotCanvas slotsCanvas;
+
     public float BPM = 135;
     public float rythm = 0.89f;
     private float beatTimer = 0;
@@ -21,8 +23,14 @@ public class Inventory : MonoBehaviour
     void Start()
     {
         elementBullets = new List<Elements_SO>();
+        
         SlotMachineManager.instance.UpdateInventorySlots();
         UpdateUIInventorySlots();
+
+        SlotMachineManager.instance.UpdateMachineSlots();
+        UpdateUIMachineSlots();
+
+
 
         // Updates animator and sprite for first time
         gameObject.GetComponent<SpriteRenderer>().sprite = elementBullets[0].elementSprite;
@@ -69,6 +77,9 @@ public class Inventory : MonoBehaviour
             {
                 SlotMachineManager.instance.UpdateInventorySlots();
                 UpdateUIInventorySlots();
+
+                SlotMachineManager.instance.UpdateMachineSlots();
+                UpdateUIMachineSlots();
             }
 
 
@@ -100,5 +111,19 @@ public class Inventory : MonoBehaviour
             else
                 inventorySlots[i].sprite = null;
         }
+    }
+
+    public void UpdateUIMachineSlots()
+    {
+        for (int i = 0; i < MachineSlots.Length; i++)
+        {
+            if (elementBullets[i] != null && elementBullets[i].elementSymbol)
+                MachineSlots[i].sprite = elementBullets[i].elementSymbol;
+            else
+                MachineSlots[i].sprite = null;
+        }
+
+        slotsCanvas.enabled = true;
+        slotsCanvas.CanvasOn();
     }
 }
