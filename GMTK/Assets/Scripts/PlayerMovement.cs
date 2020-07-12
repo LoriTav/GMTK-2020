@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 2;
     public static bool isRandomizingSpell = false;
     public bool canMove = true;
-    //public Animator PlayerAnim;
+    public Animator PlayerAnim;
 
     // Start is called before the first frame update
     void Awake()
@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
         PlayerRb = transform.GetComponent<Rigidbody2D>();
         PlayerRb.constraints = RigidbodyConstraints2D.FreezeRotation;
         PlayerRb.constraints = RigidbodyConstraints2D.FreezePositionY;
+        PlayerAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -43,23 +44,22 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move()
     {
-        if (Input.anyKey)
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
-            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
-            {
-                PlayerRb.velocity = new Vector2(-speed, PlayerRb.velocity.y);
-                transform.eulerAngles = new Vector3(0, 180, 0);
-            }
-
-            else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
-            {
-                PlayerRb.velocity = new Vector2(speed, PlayerRb.velocity.y);
-                transform.eulerAngles = new Vector3(0, 0, 0);
-            }
+            PlayerAnim.enabled = true;
+            PlayerRb.velocity = new Vector2(-speed, PlayerRb.velocity.y);
+            transform.eulerAngles = new Vector3(0, 180, 0);
         }
-       else
-       {
-           PlayerRb.velocity = new Vector2(0, 0); 
-       }
+        else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+        {
+            PlayerAnim.enabled = true;
+            PlayerRb.velocity = new Vector2(speed, PlayerRb.velocity.y);
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+        else
+        {
+            PlayerAnim.enabled = false;
+            PlayerRb.velocity = new Vector2(0, 0); 
+        }
     }
 }

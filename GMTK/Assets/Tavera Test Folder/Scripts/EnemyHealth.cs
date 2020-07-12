@@ -27,23 +27,22 @@ public class EnemyHealth : MonoBehaviour
 
             if (!bulletElementComp || !pinElementComp) { return; }
 
-            if (bulletElementComp.elementObj != pinElementComp.elementObj)
+            int damageTaken = bulletElementComp.elementObj == pinElementComp.elementObj ? 2 : 1;
+            health -= damageTaken;
+            
+            if(bulletElementComp.elementObj != pinElementComp.elementObj)
             {
-                health--;
-                Debug.Log(name + " Received damage");
                 Destroy(collision.gameObject);
-            }
-
-            if ((bulletElementComp.elementObj == pinElementComp.elementObj) || health <= 0)
-            {
-                Debug.Log(name + " is dead");
-                Destroy(gameObject);
             }
         }
         else if (collision.gameObject.tag == "Player")
         {
             health = 0;
-            Debug.Log(name + " is dead");
+        }
+
+        if(health <= 0)
+        {
+            ScoreManager.instance.IncreaseEnemyKillInCurrentFrame();
             Destroy(gameObject);
         }
     }

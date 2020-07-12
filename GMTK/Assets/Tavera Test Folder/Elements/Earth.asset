@@ -16,3 +16,5 @@ MonoBehaviour:
   color: {r: 0.6226415, g: 0.30853635, b: 0.085172676, a: 1}
   elementSprite: {fileID: 6431515502490073226, guid: 3aa2c50696171c046adbf0a99f387a20,
     type: 3}
+  controller: {fileID: 9100000, guid: b203b36e8ce416f41834c1f7ece826fa, type: 2}
+  spellController: {fileID: 9100000, guid: f41cfd97ff8fb5c43a472088e710cc09, type: 2}

@@ -14,7 +14,11 @@ public class Inventory : MonoBehaviour
     {
         elementBullets = new List<Elements_SO>();
         SlotMachineManager.instance.UpdateInventorySlots();
+
+        // Updates animator and sprite for first time
         gameObject.GetComponent<SpriteRenderer>().sprite = elementBullets[0].elementSprite;
+        gameObject.GetComponent<Animator>().runtimeAnimatorController = elementBullets[0].controller;
+        gameObject.GetComponent<Animator>().enabled = true;
     }
 
     // Update is called once per frame
@@ -28,11 +32,11 @@ public class Inventory : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && EnemyManager.instance.enemiesOnField.Count > 0 && elementBullets.Count > 0)
         {
-            // currentSpell.GetComponent<SpriteRenderer>().color = elementBullets[0].color;
             //spawn spell
-            var x = Instantiate(currentSpell, spellPoint.position, spellPoint.rotation);
-            x.GetComponent<ElementComp>().elementObj = elementBullets[0];
-            x.GetComponent<ElementComp>().UpdateSelfElement();
+            GameObject spell = Instantiate(currentSpell, spellPoint.position, spellPoint.rotation);
+            spell.GetComponent<ElementComp>().elementObj = elementBullets[0];
+            spell.GetComponent<ElementComp>().UpdateSelfElement();
+            spell.GetComponent<Animator>().runtimeAnimatorController = elementBullets[0].spellController;
 
             elementBullets.Remove(elementBullets[0]);
 
@@ -41,7 +45,9 @@ public class Inventory : MonoBehaviour
                 SlotMachineManager.instance.UpdateInventorySlots();
             }
 
-            gameObject.GetComponent<SpriteRenderer>().sprite = elementBullets[0].elementSprite;
+            // Update animator
+            gameObject.GetComponent<Animator>().runtimeAnimatorController = elementBullets[0].controller;
+            gameObject.GetComponent<Animator>().enabled = true;
         }
     }
 

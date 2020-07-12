@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1747800815988878767}
   - component: {fileID: 5125307773039673084}
   - component: {fileID: 2909146804016651066}
+  - component: {fileID: 5698009602519805533}
   m_Layer: 0
   m_Name: Spell
   m_TagString: Bullet
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 4931456522168263839}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.37, y: -5.57, z: -10.481714}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -137,6 +138,7 @@ MonoBehaviour:
   spellRb: {fileID: 0}
   spellSpeed: 10
   timeTilDestroy: 10
+  elementObj: {fileID: 0}
 --- !u!114 &2909146804016651066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,3 +152,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   elementObj: {fileID: 11400000, guid: 2717b85bba3883347942fa7fb4641431, type: 2}
+--- !u!95 &5698009602519805533
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4931456522168263839}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

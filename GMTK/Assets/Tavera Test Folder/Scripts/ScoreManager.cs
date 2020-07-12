@@ -57,14 +57,16 @@ public class ScoreManager : MonoBehaviour
     {
         if(isGameOver) { return; }
         
+        // Stop spawning enemies
         EnemyManager.instance.isActivated = false;
-        Debug.Log("completed");
 
+        // Destroy any enemies left
         foreach(GameObject enemy in EnemyManager.instance.enemiesOnField)
         {
             Destroy(enemy.gameObject);
         }
 
+        // Go to next frame
         if(currentFrameIdx + 1 < frames.Length)
         {
             LoadFrameSequence();
@@ -72,7 +74,6 @@ public class ScoreManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Game over");
             isGameOver = true;
         }
     }
@@ -88,7 +89,6 @@ public class ScoreManager : MonoBehaviour
         if(isGameOver) { return; }
 
         frames[currentFrameIdx].enemiesKilled++;
-        Debug.Log("pew");
 
         if(frames[currentFrameIdx].enemiesKilled >= 2)
         {
@@ -98,6 +98,7 @@ public class ScoreManager : MonoBehaviour
 
     private void LoadFrameSequence()
     {
+        EnemyManager.instance.RestartEnemyManager();
         timer = framesLoadTimer;
     }
 }

@@ -8,6 +8,8 @@ public class Elements_SO : ScriptableObject
     public string elementName;
     public Color color;
     public Sprite elementSprite;
+    public RuntimeAnimatorController controller;
+    public RuntimeAnimatorController spellController;
 
     // Start is called before the first frame update
     void Start()
