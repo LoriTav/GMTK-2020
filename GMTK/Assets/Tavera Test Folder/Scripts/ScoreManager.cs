@@ -68,11 +68,11 @@ public class ScoreManager : MonoBehaviour
         {
             Destroy(enemy.gameObject);
         }
-        
+
         HUD.frameNum = currentFrameIdx + 1;
 
         // Go to next frame
-        if(currentFrameIdx + 1 < frames.Length)
+        if (currentFrameIdx + 1 < frames.Length)
         {
             LoadFrameSequence();
             currentFrameIdx++;
@@ -114,7 +114,6 @@ public class ScoreManager : MonoBehaviour
             frame.enemiesKilled = 0;
             frame.score = 0;
         }
-
         currentLives = MaxLives;
         isGameOver = false;
         currentFrameIdx = 0;

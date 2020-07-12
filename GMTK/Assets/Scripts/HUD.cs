@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,7 +11,6 @@ public class HUD : MonoBehaviour
     public Image life2;
     public Image life3;
     public Text Score;
-    public Image CurrentSpell;
     public Text RScore1;
     public Text RScore2;
     public Text RScore3;
@@ -55,12 +54,12 @@ public class HUD : MonoBehaviour
         {
             life3.enabled = false;
         }
-        if(ScoreManager.instance.currentLives == 1)
+        if (ScoreManager.instance.currentLives == 1)
         {
             life3.enabled = false;
             life2.enabled = false;
         }
-        if(ScoreManager.instance.currentLives <= 0)
+        if (ScoreManager.instance.currentLives <= 0)
         {
             life3.enabled = false;
             life2.enabled = false;
@@ -73,24 +72,7 @@ public class HUD : MonoBehaviour
             life1.enabled = true;
         }
 
-        if (inventory.elementBullets[0].name == "Air")
-        {
-           
-        }
-        if (inventory.elementBullets[0].name == "Earth")
-        {
-
-        }
-        if (inventory.elementBullets[0].name == "Water")
-        {
-
-        }
-        if (inventory.elementBullets[0].name == "Fire")
-        {
-
-        }
-
-        if(frameNum == 1)
+        if (frameNum == 1)
         {
             RScore1.text = "" + score;
         }
