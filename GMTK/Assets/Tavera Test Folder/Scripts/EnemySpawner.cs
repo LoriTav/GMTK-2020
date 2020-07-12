@@ -35,8 +35,6 @@ public class EnemySpawner : MonoBehaviour
             
             newEnemy.GetComponent<ElementComp>().elementObj = SlotMachineManager.instance.allElementsObjs[rndElementIdx];
             newEnemy.GetComponent<ElementComp>().UpdateSelfElement();
-
-            Destroy(newEnemy, timeToDestroyPin);
             
             EnemyManager.instance.enemiesOnField.Add(newEnemy);
             enemiesToSpawn--;

@@ -90,7 +90,7 @@ public class ScoreManager : MonoBehaviour
 
         frames[currentFrameIdx].enemiesKilled++;
 
-        if(frames[currentFrameIdx].enemiesKilled >= 2)
+        if(frames[currentFrameIdx].enemiesKilled >= 10)
         {
             CompleteFrame();
         }

@@ -8,8 +8,13 @@ public class Elements_SO : ScriptableObject
     public string elementName;
     public Color color;
     public Sprite elementSprite;
-    public RuntimeAnimatorController controller;
+    public RuntimeAnimatorController ballController;
     public RuntimeAnimatorController spellController;
+
+    public RuntimeAnimatorController pinAliveController;
+    public RuntimeAnimatorController crackPinAliveController;
+    public RuntimeAnimatorController[] crackPinDeathController;
+
     public AudioClip audioClip;
 
     // Start is called before the first frame update

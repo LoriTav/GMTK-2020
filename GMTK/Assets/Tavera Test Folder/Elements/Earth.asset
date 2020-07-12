@@ -16,6 +16,12 @@ MonoBehaviour:
   color: {r: 0.6226415, g: 0.30853635, b: 0.085172676, a: 1}
   elementSprite: {fileID: 6431515502490073226, guid: 3aa2c50696171c046adbf0a99f387a20,
     type: 3}
-  controller: {fileID: 9100000, guid: b203b36e8ce416f41834c1f7ece826fa, type: 2}
+  ballController: {fileID: 9100000, guid: b203b36e8ce416f41834c1f7ece826fa, type: 2}
   spellController: {fileID: 9100000, guid: f41cfd97ff8fb5c43a472088e710cc09, type: 2}
+  pinAliveController: {fileID: 9100000, guid: a4fde0128c8679443b519deac158143b, type: 2}
+  crackPinAliveController: {fileID: 9100000, guid: a91e016025bfe994381f7077221ab201,
+    type: 2}
+  crackPinDeathController:
+  - {fileID: 9100000, guid: acb25ea19bcc7bc4a968d9509ed461d0, type: 2}
+  - {fileID: 9100000, guid: 377424518ba2c8d4da41bf4c082684f0, type: 2}
   audioClip: {fileID: 8300000, guid: a7134829b56e6e648b85b1ba0fdc8b84, type: 3}

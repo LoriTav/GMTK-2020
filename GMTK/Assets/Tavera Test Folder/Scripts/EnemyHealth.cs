@@ -6,8 +6,7 @@ public class EnemyHealth : MonoBehaviour
 {
     public int health = 2;
     private AudioSource audioSource;
-    public float deathDelay;
-    public RuntimeAnimatorController deathController;
+    public float deathDelay = 2;
 
     private float deathTimer = 0;
     private Animator animator;
@@ -20,6 +19,7 @@ public class EnemyHealth : MonoBehaviour
     {
         audioSource = gameObject.GetComponent<AudioSource>();
         animator = gameObject.GetComponent<Animator>();
+        animator.runtimeAnimatorController = GetComponent<ElementComp>().elementObj.pinAliveController;
     }
 
     // Update is called once per frame
@@ -44,8 +44,10 @@ public class EnemyHealth : MonoBehaviour
 
             int damageTaken = bulletElementComp.elementObj == pinElementComp.elementObj ? 2 : 1;
             health -= damageTaken;
-            
-            if(bulletElementComp.elementObj != pinElementComp.elementObj)
+
+            animator.runtimeAnimatorController = GetComponent<ElementComp>().elementObj.crackPinAliveController;
+
+            if (bulletElementComp.elementObj != pinElementComp.elementObj)
             {
                 Destroy(collision.gameObject);
             }
@@ -55,7 +57,7 @@ public class EnemyHealth : MonoBehaviour
             health = 0;
         }
 
-        if(health <= 0)
+        if (health <= 0 && !isDeath)
         {
             ScoreManager.instance.IncreaseEnemyKillInCurrentFrame();
             DeathSequence();
@@ -64,7 +66,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void DeathSequence()
     {
-        if(health <= 0) { return; }
+        if(health > 0) { return; }
         
         deathTimer = deathDelay;
         isDeath = true;
@@ -74,7 +76,7 @@ public class EnemyHealth : MonoBehaviour
         audioSource.loop = false;
         audioSource.Play();
 
-        animator.runtimeAnimatorController = deathController;
+        animator.runtimeAnimatorController = GetComponent<ElementComp>().elementObj.crackPinDeathController[Random.Range(0, 2)];
     }
 
     private void OnDestroy()
