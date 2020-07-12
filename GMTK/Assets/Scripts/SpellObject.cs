@@ -20,6 +20,8 @@ public class SpellObject : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         audioSource.loop = false;
         audioSource.clip = gameObject.GetComponent<ElementComp>().elementObj.audioClip;
+        audioSource.volume = SoundManager.instance.enableSoundEfx ? SoundManager.instance.soundEfxVolume : 0;
+
         audioSource.Play();
     }
 
