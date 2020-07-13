@@ -21,10 +21,11 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         canMove = timer <= 0;
+        stop = ScoreManager.instance.isGameOver;
 
-        if(!gameObject.GetComponent<EnemyHealth>().isDeath && canMove)
+        if(!gameObject.GetComponent<EnemyHealth>().isDeath && canMove && !stop)
             transform.position -= new Vector3(0, speed * Time.deltaTime, 0);
-        else if(gameObject.GetComponent<EnemyHealth>().isDeath && canMove)
+        else if(gameObject.GetComponent<EnemyHealth>().isDeath && canMove && !stop)
             transform.position += new Vector3(0, speed * Time.deltaTime, 0);
 
         timer -= Time.deltaTime;

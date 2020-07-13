@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    public static EnemyManager instance;
     public List<GameObject> enemiesOnField;
     public int totalEnemiesToSpawn;
     public EnemySpawner[] spawners;
@@ -15,30 +14,16 @@ public class EnemyManager : MonoBehaviour
     private int currentSpawnerIdx;
     private int indSpawnerToSpawn;
 
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-
-        enemiesOnField = new List<GameObject>();
-    }
-
     // Start is called before the first frame update
     void Start()
     {
+        ScoreManager.instance.enemyManager = this;
         RestartEnemyManager();
     }
 
     public void RestartEnemyManager()
     {
+        enemiesOnField = new List<GameObject>();
         indSpawnerToSpawn = (int)totalEnemiesToSpawn / spawners.Length;
         currentSpawnerIdx = 0;
         timer = activateSpawnersTimer;
@@ -54,29 +39,44 @@ public class EnemyManager : MonoBehaviour
     {
         timer -= Time.deltaTime;
         
+        // Complete the frame if the the manager is activated, all spawners finished spawning enemies, and no enemies on the field 
+        if(isActivated && enemiesOnField.Count == 0 && areSpawnersDone())
+        {
+            ScoreManager.instance.CompleteFrame();
+        }
+        
+        // Only start spawning after the delay and if the spawners haven't spawn a certain number of enemies
         if(currentSpawnerIdx < spawners.Length && timer <= 0)
         {
             spawners[currentSpawnerIdx].isActivated = spawners[currentSpawnerIdx].enemiesToSpawn > 0;
         
-            if(spawners[currentSpawnerIdx].enemiesToSpawn <= 0)
+            if(spawners[currentSpawnerIdx].enemiesToSpawn <= 0 && currentSpawnerIdx + 1 < spawners.Length)
             {
-                if(currentSpawnerIdx + 1 >= spawners.Length)
-                {
-                    return;
-                }
-                else
-                {
-                    currentSpawnerIdx++;
-                }
+                currentSpawnerIdx++;
             }
         }
     }
 
+    // Used when an enemy reaches the bottom gutter
     public void DelayEnemies()
     {
         foreach(var enemy in enemiesOnField)
         {
             enemy.GetComponent<EnemyMovement>().AddDelay();
         }
+    }
+
+    // Checks if the spawners are activated. Used to signal if spawners are done spawning enemies 
+    private bool areSpawnersDone()
+    {
+        foreach(var spawner in spawners)
+        {
+            if (spawner.isActivated == true)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

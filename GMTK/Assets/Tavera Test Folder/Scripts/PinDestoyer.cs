@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class PinDestoyer : MonoBehaviour
 {
+    public EnemyManager enemyManager;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        enemyManager = GameObject.Find("Enemy Manager").GetComponent<EnemyManager>();
     }
 
     // Update is called once per frame
@@ -27,8 +29,8 @@ public class PinDestoyer : MonoBehaviour
 
     private void DestoryALive()
     {
-        if(ScoreManager.instance.currentLives <= 0) { return; }
+        if(ScoreManager.instance.isGameOver) { return; }
         ScoreManager.instance.ReduceALive();
-        EnemyManager.instance.DelayEnemies();
+        enemyManager.DelayEnemies();
     }
 }

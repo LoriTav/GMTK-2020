@@ -13,6 +13,7 @@ public class Inventory : MonoBehaviour
     public SpriteRenderer[] inventorySlots;
     public SpriteRenderer[] MachineSlots;
     public SlotCanvas slotsCanvas;
+    public EnemyManager enemyManager;
 
     public float BPM = 135;
     public float rythm = 0.89f;
@@ -23,28 +24,29 @@ public class Inventory : MonoBehaviour
     void Start()
     {
         elementBullets = new List<Elements_SO>();
-        
+        enemyManager = GameObject.Find("Enemy Manager").GetComponent<EnemyManager>();
+
+        SlotMachineManager.instance.playerInventory = this;
+
         SlotMachineManager.instance.UpdateInventorySlots();
         UpdateUIInventorySlots();
 
         SlotMachineManager.instance.UpdateMachineSlots();
         UpdateUIMachineSlots();
 
-
-
         // Updates animator and sprite for first time
-        gameObject.GetComponent<SpriteRenderer>().sprite = elementBullets[0].elementSprite;
-        gameObject.GetComponent<Animator>().runtimeAnimatorController = elementBullets[0].ballController;
-        gameObject.GetComponent<Animator>().enabled = true;
-        rythm = (60f / BPM) * 2f;
+        UpdatePlayerAnimator();
 
+        rythm = (60f / BPM) * 2f;
         timeTweenShots = 0;
     }
-    private int fff = 0;
+
     // Update is called once per frame
     void Update()
     {
         beatTimer -= Time.deltaTime;
+        timeTweenShots -= Time.deltaTime;
+
         if(beatTimer <= 0)
         {
             beatTimer = rythm;
@@ -55,24 +57,24 @@ public class Inventory : MonoBehaviour
         float zRotation = Mathf.Atan2(delta.y, delta.x) * Mathf.Rad2Deg;
         spellPoint.rotation = Quaternion.Euler(0f, 0f, zRotation - 90);
 
-        timeTweenShots -= Time.deltaTime;
-
-        if (Input.GetKeyDown(KeyCode.Mouse0) && EnemyManager.instance.enemiesOnField.Count > 0 
-            && elementBullets.Count > 0  && timeTweenShots <= 0 && !ScoreManager.instance.isGameOver)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && enemyManager.enemiesOnField.Count > 0 
+            && elementBullets.Count > 0 && timeTweenShots <= 0 && !ScoreManager.instance.isGameOver
+            && !GameObject.Find("PauseMenus").GetComponent<PauseMenu>().isPaused)
         {
             if(beatTimer <= .5)
             {
-                Debug.Log("Hit beat");
-                ScoreManager.instance.IncreaseScoreInCurrentFrame(1000);
+                ScoreManager.instance.IncreaseScoreInCurrentFrame(750);
             }
 
-            //spawn spell
+            // Spawn a new spell and set its element to whatever is on top of the element bullets, and set its animator
             GameObject spell = Instantiate(currentSpell, spellPoint.position, spellPoint.rotation);
             spell.GetComponent<ElementComp>().elementObj = elementBullets[0];
             spell.GetComponent<Animator>().runtimeAnimatorController = elementBullets[0].spellController;
 
+            // Remove top element from list after bullet is spawned
             elementBullets.Remove(elementBullets[0]);
 
+            // Get new element bullets when player runs out
             if (elementBullets.Count <= 0)
             {
                 SlotMachineManager.instance.UpdateInventorySlots();
@@ -82,15 +84,11 @@ public class Inventory : MonoBehaviour
                 UpdateUIMachineSlots();
             }
 
+            // Update animator on the player after spell is shot
+            UpdatePlayerAnimator();
 
-            // Update animator
-            gameObject.GetComponent<Animator>().runtimeAnimatorController = elementBullets[0].ballController;
-            gameObject.GetComponent<Animator>().enabled = true;
-
-            gameObject.GetComponent<SpriteRenderer>().sprite = elementBullets[0].elementSprite;
             timeTweenShots = shotTimeReset;
         }
-
     }
 
     public bool CanAddToInventory(Elements_SO newBullet)
@@ -98,7 +96,7 @@ public class Inventory : MonoBehaviour
         if (elementBullets.Count >= maxSize) { return false; }
 
         elementBullets.Add(newBullet);
-
+        
         return true;
     }
 
@@ -125,5 +123,12 @@ public class Inventory : MonoBehaviour
 
         slotsCanvas.enabled = true;
         slotsCanvas.CanvasOn();
+    }
+
+    private void UpdatePlayerAnimator()
+    {
+        gameObject.GetComponent<SpriteRenderer>().sprite = elementBullets[0].elementSprite;
+        gameObject.GetComponent<Animator>().runtimeAnimatorController = elementBullets[0].ballController;
+        gameObject.GetComponent<Animator>().enabled = true;
     }
 }

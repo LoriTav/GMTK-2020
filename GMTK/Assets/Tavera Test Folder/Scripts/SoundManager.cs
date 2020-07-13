@@ -18,10 +18,13 @@ public class SoundManager : MonoBehaviour
 
     public AudioClip bowlingTheme;
     public AudioClip mainMenuTheme; 
-    public AudioClip[] pinsHit;
-    public int tempLvlIndex;
+    public AudioClip playerWinSoundEfx;         // Default is the "Many Pins" sound effect
+    public AudioClip playerLoseSoundEfx;        // Default is the "Death" sound effect
 
-    public AudioSource backgroundAS;
+    public AudioClip[] pinsHit;                 // When a pin is KO'd, it will play a random sound effect from this array
+
+    public AudioSource backgroundAS;            // Should loop
+    public AudioSource gameOverAS;              // This is a sound effect. Should not loop when played
 
     private void Awake()
     {
@@ -40,10 +43,9 @@ public class SoundManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        backgroundAS = GetComponent<AudioSource>();
         backgroundAS.loop = true;
-
-        playLevelBackground();
+        gameOverAS.loop = false;
+        playLevelBackground(SceneManager.GetActiveScene().buildIndex);
     }
 
     // Update is called once per frame
@@ -58,19 +60,24 @@ public class SoundManager : MonoBehaviour
         return pinsHit[rndIndex];
     }
 
-    public void playLevelBackground()
+    public void playLevelBackground(int lvlIndex)
     {
-        //int lvlIndex = SceneManager.GetActiveScene().buildIndex;
-        AudioClip audioToPlay = tempLvlIndex == 0 ? mainMenuTheme : bowlingTheme;
+        if(!backgroundAS) { return; }
 
-        UpdateNewVolumeSettings();
+        AudioClip audioToPlay = lvlIndex == 0 ? mainMenuTheme : bowlingTheme;
+
+        backgroundAS.volume = backgroundVolume;
         backgroundAS.clip = audioToPlay;
         backgroundAS.Play();
     }
 
-    public void UpdateNewVolumeSettings()
+    public void PlayGameOver(bool didPlayerWin)
     {
-        backgroundAS.volume = backgroundVolume;
+        if(!gameOverAS) { return; }
+        backgroundAS.Stop();
+
+        gameOverAS.clip = didPlayerWin ? playerWinSoundEfx : playerLoseSoundEfx;
+        gameOverAS.Play();
     }
 
     public void enableBackgroundMusic()

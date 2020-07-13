@@ -13,6 +13,7 @@ public class PauseMenu : MonoBehaviour
     public Canvas PauseCanvas;
     public Canvas ControlsCanvas;
     public Canvas OptionsCanvas;
+    public bool isPaused;
 
     void Update()
     {
@@ -26,6 +27,7 @@ public class PauseMenu : MonoBehaviour
                 PauseCanvas.enabled = true;
                 ControlsCanvas.enabled = false;
                 OptionsCanvas.enabled = false;
+                isPaused = true;
             }
             else
             {
@@ -35,6 +37,7 @@ public class PauseMenu : MonoBehaviour
                 PauseCanvas.enabled = false;
                 ControlsCanvas.enabled = false;
                 OptionsCanvas.enabled = false;
+                isPaused = false;
             }
         }
     }

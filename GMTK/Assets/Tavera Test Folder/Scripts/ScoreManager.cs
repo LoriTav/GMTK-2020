@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [Serializable]
 public class Frame
@@ -14,14 +15,17 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
     public Frame[] frames;
-    public List<GameObject> livesRends;
     public int currentFrameIdx = 0;
     private int MaxLives = 3;
     public int currentLives = 3;
     public bool isGameOver = false;
     public float framesLoadTimer = 3;
+    public int totalScore = 0;
+    public float gameOverDelay = 3;
+    public EnemyManager enemyManager;
 
-    private float timer = 0;
+    private float gameoverTimer = 0;
+    private float framesTimer = 0;
 
     private void Awake()
     {
@@ -35,6 +39,8 @@ public class ScoreManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        totalScore = 0;
     }
 
     // Start is called before the first frame update
@@ -46,92 +52,99 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isGameOver) { return; }
-
-        if(timer <= 0)
+        if (isGameOver && SceneManager.GetActiveScene().buildIndex == 1) 
         {
-            EnemyManager.instance.isActivated = true;
+            if(gameoverTimer <= 0)
+                SceneManager.LoadScene(2);
+
+            gameoverTimer -= Time.deltaTime;
+            return; 
         }
 
-        timer -= Time.deltaTime;
+        if (framesTimer <= 0 && SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            enemyManager.isActivated = true;
+        }
+
+        framesTimer -= Time.deltaTime;
     }
 
     public void CompleteFrame()
     {
-        if(isGameOver) { return; }
-        
+        if (isGameOver) { return; }
+
         // Stop spawning enemies
-        EnemyManager.instance.isActivated = false;
+        enemyManager.isActivated = false;
 
         // Destroy any enemies left
-        foreach(GameObject enemy in EnemyManager.instance.enemiesOnField)
+        foreach (GameObject enemy in enemyManager.enemiesOnField)
         {
             Destroy(enemy.gameObject);
         }
 
         HUD.frameNum = currentFrameIdx + 1;
 
-        // Go to next frame
+        // Go to next frame or game over
         if (currentFrameIdx + 1 < frames.Length)
         {
-            LoadFrameSequence();
+            enemyManager.RestartEnemyManager();
+            framesTimer = framesLoadTimer;
             currentFrameIdx++;
         }
         else
         {
-            isGameOver = true;
+            GameOverSequence();
         }
     }
 
     public void IncreaseScoreInCurrentFrame(int scoreToAdd)
     {
-        if(isGameOver) { return; }
+        if (isGameOver || !enemyManager.isActivated) { return; }
         frames[currentFrameIdx].score += scoreToAdd;
+        totalScore += scoreToAdd;
     }
 
     public void IncreaseEnemyKillInCurrentFrame()
     {
-        if(isGameOver) { return; }
+        if (isGameOver) { return; }
 
         frames[currentFrameIdx].enemiesKilled++;
-
-        if(frames[currentFrameIdx].enemiesKilled >= 10)
-        {
-            CompleteFrame();
-        }
     }
 
-    private void LoadFrameSequence()
-    {
-        EnemyManager.instance.RestartEnemyManager();
-        timer = framesLoadTimer;
-    }
-
+    // Reset values for when the player decides to loop
     public void ResetScoreManager()
     {
-        foreach(Frame frame in frames)
+        foreach (Frame frame in frames)
         {
             frame.enemiesKilled = 0;
             frame.score = 0;
         }
+
         currentLives = MaxLives;
         isGameOver = false;
         currentFrameIdx = 0;
-        timer = framesLoadTimer;
+        framesTimer = framesLoadTimer;
+        totalScore = 0;
     }
 
+    // Updates UI to remove a bowling ball, ans checks for game over
     public void ReduceALive()
     {
-        if(isGameOver) { return; }
-
         currentLives--;
 
-        Destroy(livesRends[0].gameObject);
-        livesRends.Remove(livesRends[0]);
+        GameObject.Find("HealthBalls").GetComponent<HealthBalls>().UpdateHealthBallsUI();
 
-        if(currentLives <= 0)
+        if (currentLives <= 0)
         {
-            isGameOver = true;
+            GameOverSequence();
         }
+    }
+
+    // Add a delay when the game is over
+    public void GameOverSequence()
+    {
+        gameoverTimer = gameOverDelay;
+        isGameOver = true;
+        SoundManager.instance.PlayGameOver(currentLives > 0);       
     }
 }

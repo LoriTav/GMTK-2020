@@ -44,12 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95aa7edfd01065a45a55f4dca66b3ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 0}
-  enemySpawnTimer: 2
-  spawnerXAxisRange: 8
-  timeToDestroyPin: 5
+  enemyPrefab: {fileID: 526480980363172935, guid: 99c844f208e6a0e46a39f12efe783a58,
+    type: 3}
+  spawnDelay: 0.7
+  spawnerXAxisRange: 1.5
+  timeToDestroyPin: 10
   isActivated: 0
-  enemiesSpawned: 0
+  enemiesToSpawn: 0
 --- !u!212 &1754156938494388061
 SpriteRenderer:
   m_ObjectHideFlags: 0

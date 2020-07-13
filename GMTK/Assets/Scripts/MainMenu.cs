@@ -14,14 +14,21 @@ public class MainMenu : MonoBehaviour
     public Canvas ControlsCanvas;
     public Canvas OptionsCanvas;
 
+    private void Start()
+    {
+        SoundManager.instance.playLevelBackground(0);
+    }
+
     public void StartButtonPressed()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SoundManager.instance.playLevelBackground(1);
+        ScoreManager.instance.ResetScoreManager();
     }
 
     public void OptionsButtonPressed()
     {
-        OptionsCanvas.enabled = true;
+        //OptionsCanvas.enabled = true;
         MainCanvas.enabled = false;
         ControlsCanvas.enabled = false;
     }
@@ -49,7 +56,7 @@ public class MainMenu : MonoBehaviour
     public void ControlsButtonPressed()
     {
         ControlsCanvas.enabled = true;
-        OptionsCanvas.enabled = false;
+        //OptionsCanvas.enabled = false;
         MainCanvas.enabled = false;
     }
 
@@ -57,7 +64,7 @@ public class MainMenu : MonoBehaviour
     {
         MainCanvas.enabled = true;
         ControlsCanvas.enabled = false;
-        OptionsCanvas.enabled = false;
+        //OptionsCanvas.enabled = false;
     }
 
     public void ExitButtonPressed()

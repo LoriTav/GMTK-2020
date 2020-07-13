@@ -83,6 +83,9 @@ public class EnemyHealth : MonoBehaviour
 
     private void OnDestroy()
     {
-        EnemyManager.instance.enemiesOnField.Remove(this.gameObject);
+        if(GameObject.Find("Enemy Manager"))
+        {
+            GameObject.Find("Enemy Manager").GetComponent<EnemyManager>().enemiesOnField.Remove(this.gameObject);
+        }
     }
 }
