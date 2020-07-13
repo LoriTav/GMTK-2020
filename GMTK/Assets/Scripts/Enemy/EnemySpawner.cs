@@ -18,7 +18,6 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         enemyManager = GameObject.Find("Enemy Manager").GetComponent<EnemyManager>();
-        Physics2D.gravity = new Vector2(0, 0);
         
         // Positions spawner on top of screen view
         Camera cam = Camera.main;

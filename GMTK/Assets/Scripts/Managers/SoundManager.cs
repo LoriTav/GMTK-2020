@@ -76,6 +76,7 @@ public class SoundManager : MonoBehaviour
         if(!gameOverAS) { return; }
         backgroundAS.Stop();
 
+        gameOverAS.volume = soundEfxVolume;
         gameOverAS.clip = didPlayerWin ? playerWinSoundEfx : playerLoseSoundEfx;
         gameOverAS.Play();
     }

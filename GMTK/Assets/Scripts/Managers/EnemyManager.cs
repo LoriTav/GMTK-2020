@@ -18,6 +18,7 @@ public class EnemyManager : MonoBehaviour
     void Start()
     {
         ScoreManager.instance.enemyManager = this;
+        Physics2D.gravity = new Vector2(0, 0);
         RestartEnemyManager();
     }
 
