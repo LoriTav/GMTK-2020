@@ -9,7 +9,10 @@ public class ElementComp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(gameObject.GetComponent<SpellObject>())
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = elementObj.color;
+        }
     }
 
     // Update is called once per frame

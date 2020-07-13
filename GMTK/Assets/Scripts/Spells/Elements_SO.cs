@@ -8,6 +8,7 @@ public class Elements_SO : ScriptableObject
     public string elementName;
     public Sprite elementSprite;
     public Sprite elementSymbol;
+    public Color color;
 
     public RuntimeAnimatorController ballController;
     public RuntimeAnimatorController spellController;

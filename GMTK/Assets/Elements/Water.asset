@@ -17,6 +17,7 @@ MonoBehaviour:
     type: 3}
   elementSymbol: {fileID: -5147220553286732263, guid: 97ed557415ee7bd4ea812c3bad5fa18f,
     type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
   ballController: {fileID: 9100000, guid: 2580b2769c1c0af44bddc6446904f721, type: 2}
   spellController: {fileID: 9100000, guid: db17a4cda941d4f4ca25228df12f3a24, type: 2}
   pinAliveController: {fileID: 9100000, guid: 8ce394d856fa149409b0cfa66ec0cc3d, type: 2}
