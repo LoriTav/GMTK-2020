@@ -59,7 +59,7 @@ public class Inventory : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && enemyManager.enemiesOnField.Count > 0 
             && elementBullets.Count > 0 && timeTweenShots <= 0 && !ScoreManager.instance.isGameOver
-            && !GameObject.Find("PauseMenus").GetComponent<PauseMenu>().isPaused)
+            && !GameObject.Find("PauseMenus").GetComponent<PauseMenu>().isPaused && PlayerMovement.isRandomizingSpell == false)
         {
             if(beatTimer <= .5)
             {

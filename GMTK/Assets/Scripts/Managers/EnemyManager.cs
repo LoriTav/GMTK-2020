@@ -59,11 +59,11 @@ public class EnemyManager : MonoBehaviour
     }
 
     // Used when an enemy reaches the bottom gutter
-    public void DelayEnemies()
+    public void DelayEnemies(float delayTimer)
     {
         foreach(var enemy in enemiesOnField)
         {
-            enemy.GetComponent<EnemyMovement>().AddDelay();
+            enemy.GetComponent<EnemyMovement>().AddDelay(delayTimer);
         }
     }
 

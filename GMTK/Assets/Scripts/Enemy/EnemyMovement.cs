@@ -7,7 +7,6 @@ public class EnemyMovement : MonoBehaviour
     public float speed;
     public bool canMove = true;
     public bool stop = false;
-    public float playerLoseLiveDelayTimer = .5f;
 
     private float timer;
 
@@ -32,9 +31,9 @@ public class EnemyMovement : MonoBehaviour
        
     }
 
-    public void AddDelay()
+    public void AddDelay(float delayTimer)
     {
-        timer = playerLoseLiveDelayTimer;
+        timer = delayTimer;
     }
 
     public void Move()

@@ -3499,6 +3499,9 @@ MonoBehaviour:
   timer2On: 0
   timer: 0.35
   timer2: 0.05
+  padding: 0.5
+  enemyManager: {fileID: 126029338}
+  playerMovement: {fileID: 305415270}
 --- !u!224 &500065477
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4410,6 +4413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyManager: {fileID: 0}
+  playerLoseLiveDelayTimer: 0.5
 --- !u!61 &705599043
 BoxCollider2D:
   m_ObjectHideFlags: 0

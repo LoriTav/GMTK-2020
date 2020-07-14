@@ -13,13 +13,20 @@ public class SlotCanvas : MonoBehaviour
     public SpriteRenderer s5;
     public bool timerOn = false;
     public bool timer2On = false;
-    public float timer = .5f;
-    public float timer2 = .8f;
+    public float timer = .35f;
+    public float timer2 = .05f;
+    public float padding;
+    public EnemyManager enemyManager;
+    public PlayerMovement playerMovement;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //timerOn = false;
+       // timer2On = false;
+        timer = .35f;
+        timer2 = .05f;
+        padding = 1.65f;
     }
 
     // Update is called once per frame
@@ -43,11 +50,14 @@ public class SlotCanvas : MonoBehaviour
         if (timer2 < -1)
         {
             EverythingOff();
+            PlayerMovement.isRandomizingSpell = false;
         }
     }
 
     public void CanvasOn()
     {
+        PlayerMovement.isRandomizingSpell = true;
+        enemyManager.DelayEnemies(padding);
         Slots.enabled = true;
         s1.enabled = true;
         s2.enabled = false;
@@ -72,7 +82,7 @@ public class SlotCanvas : MonoBehaviour
 
     public void EverythingOff()
     {
-        Slots.enabled = false;
+        
         s1.enabled = false;
         s2.enabled = false;
         s3.enabled = false;
@@ -82,5 +92,6 @@ public class SlotCanvas : MonoBehaviour
         timer = .35f;
         timer2On = false;
         timer2 = .05f;
+        Slots.enabled = false;
     }
 }

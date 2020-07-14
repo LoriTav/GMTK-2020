@@ -82,8 +82,6 @@ public class ScoreManager : MonoBehaviour
             Destroy(enemy.gameObject);
         }
 
-        HUD.frameNum = currentFrameIdx + 1;
-
         // Go to next frame or game over
         if (currentFrameIdx + 1 < frames.Length)
         {

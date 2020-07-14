@@ -5,6 +5,7 @@ using UnityEngine;
 public class PinDestoyer : MonoBehaviour
 {
     public EnemyManager enemyManager;
+    public float playerLoseLiveDelayTimer = .5f;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,6 @@ public class PinDestoyer : MonoBehaviour
     {
         if(ScoreManager.instance.isGameOver) { return; }
         ScoreManager.instance.ReduceALive();
-        enemyManager.DelayEnemies();
+        enemyManager.DelayEnemies(playerLoseLiveDelayTimer);
     }
 }

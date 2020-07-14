@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public CircleCollider2D playerCollider;
     public Rigidbody2D PlayerRb;
     public float speed = 2;
-    public static bool isRandomizingSpell = false;
+    public static bool isRandomizingSpell;
     public bool canMove = true;
     public Animator PlayerAnim;
     public AudioSource audioSource;
@@ -21,7 +21,8 @@ public class PlayerMovement : MonoBehaviour
         PlayerRb.constraints = RigidbodyConstraints2D.FreezePositionY;
         PlayerAnim = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
-    }
+        isRandomizingSpell = false;
+}
 
     // Update is called once per frame
     void Update()
