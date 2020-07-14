@@ -10,7 +10,7 @@ public class WaveCanvas : MonoBehaviour
     public float timer = .35f;
     public float padding;
     public Text waveNumText;
-    public int frameNum;
+    public int frameNum = 1;
     public EnemyManager enemyManager;
 
     public bool isWorking = false;
@@ -18,9 +18,9 @@ public class WaveCanvas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
- 
         timer = .8f;
         padding = timer;
+        CanvasOn();
     }
 
     // Update is called once per frame

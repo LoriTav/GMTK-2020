@@ -5068,7 +5068,7 @@ MonoBehaviour:
   timer: 0.35
   padding: 0
   waveNumText: {fileID: 872497136}
-  frameNum: 0
+  frameNum: 1
   enemyManager: {fileID: 126029338}
   isWorking: 0
 --- !u!114 &805433192
@@ -9671,7 +9671,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16

@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -115,7 +115,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2
   deathDelay: 2
-  deathController: {fileID: 9100000, guid: 42a94a1bab5dda741994f48c231cd9a5, type: 2}
   isDeath: 0
 --- !u!114 &526480980363172940
 MonoBehaviour:
@@ -130,6 +129,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
+  canMove: 1
+  stop: 0
 --- !u!50 &526480980363172941
 Rigidbody2D:
   serializedVersion: 4
