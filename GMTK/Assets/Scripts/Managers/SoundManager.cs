@@ -46,6 +46,7 @@ public class SoundManager : MonoBehaviour
         backgroundAS.loop = true;
         gameOverAS.loop = false;
         playLevelBackground(SceneManager.GetActiveScene().buildIndex);
+        backgroundAS.volume = backgroundVolume;
     }
 
     // Update is called once per frame
@@ -66,7 +67,7 @@ public class SoundManager : MonoBehaviour
 
         AudioClip audioToPlay = lvlIndex == 0 ? mainMenuTheme : bowlingTheme;
 
-        backgroundAS.volume = backgroundVolume;
+        
         backgroundAS.clip = audioToPlay;
         backgroundAS.Play();
     }

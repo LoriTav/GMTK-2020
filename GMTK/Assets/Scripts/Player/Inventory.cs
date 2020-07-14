@@ -63,7 +63,7 @@ public class Inventory : MonoBehaviour
         {
             if(beatTimer <= .5)
             {
-                ScoreManager.instance.IncreaseScoreInCurrentFrame(750);
+                ScoreManager.instance.IncreaseScoreInCurrentFrame(200);
             }
 
             // Spawn a new spell and set its element to whatever is on top of the element bullets, and set its animator

@@ -61,7 +61,7 @@ public class EnemyHealth : MonoBehaviour
         {
             DeathSequence();
             ScoreManager.instance.IncreaseEnemyKillInCurrentFrame();
-            ScoreManager.instance.IncreaseScoreInCurrentFrame(500);
+            ScoreManager.instance.IncreaseScoreInCurrentFrame(300);
         }
     }
 
