@@ -13,6 +13,7 @@ public class Frame
 
 public class ScoreManager : MonoBehaviour
 {
+    public WaveCanvas WaveC;
     public static ScoreManager instance;
     public Frame[] frames;
     public int currentFrameIdx = 0;
@@ -88,6 +89,7 @@ public class ScoreManager : MonoBehaviour
             enemyManager.RestartEnemyManager();
             framesTimer = framesLoadTimer;
             currentFrameIdx++;
+            WaveC.CanvasOn();
         }
         else
         {

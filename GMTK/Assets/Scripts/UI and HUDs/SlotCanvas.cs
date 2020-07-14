@@ -24,8 +24,6 @@ public class SlotCanvas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //timerOn = false;
-       // timer2On = false;
         timer = .35f;
         timer2 = .05f;
         padding = 1.65f;

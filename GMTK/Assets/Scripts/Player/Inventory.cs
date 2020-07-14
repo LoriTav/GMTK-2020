@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    public OnBeatCanvas OnBeatC;
     public int maxSize = 3;
     public List<Elements_SO> elementBullets;
     public Transform spellPoint;
@@ -25,7 +26,7 @@ public class Inventory : MonoBehaviour
     {
         elementBullets = new List<Elements_SO>();
         enemyManager = GameObject.Find("Enemy Manager").GetComponent<EnemyManager>();
-
+       
         SlotMachineManager.instance.playerInventory = this;
 
         SlotMachineManager.instance.UpdateInventorySlots();
@@ -63,6 +64,7 @@ public class Inventory : MonoBehaviour
         {
             if(beatTimer <= .5)
             {
+                OnBeatC.CanvasOn();
                 ScoreManager.instance.IncreaseScoreInCurrentFrame(200);
             }
 
