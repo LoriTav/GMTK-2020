@@ -49,7 +49,7 @@ public class EnemyManager : MonoBehaviour
         // Only start spawning after the delay and if the spawners haven't spawn a certain number of enemies
         if(currentSpawnerIdx < spawners.Length && timer <= 0)
         {
-            spawners[currentSpawnerIdx].isActivated = spawners[currentSpawnerIdx].enemiesToSpawn > 0;
+            spawners[currentSpawnerIdx].isActivated = spawners[currentSpawnerIdx].enemiesToSpawn > 0 && !GameObject.Find("SlotsCanvas").GetComponent<SlotCanvas>().isWorking;
         
             if(spawners[currentSpawnerIdx].enemiesToSpawn <= 0 && currentSpawnerIdx + 1 < spawners.Length)
             {
