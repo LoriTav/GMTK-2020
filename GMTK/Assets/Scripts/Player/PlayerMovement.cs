@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             canMove = false;
+            PlayerRb.velocity = new Vector2(0, 0);
         }
     }
 

@@ -28,35 +28,35 @@ public class MainMenu : MonoBehaviour
 
     public void OptionsButtonPressed()
     {
-        //OptionsCanvas.enabled = true;
+        OptionsCanvas.enabled = true;
         MainCanvas.enabled = false;
         ControlsCanvas.enabled = false;
     }
 
     public void ThemeOffButtonPressed()
     {
-        //soundManager.ThemeVolumeOff();
+        SoundManager.instance.disableBackgroundMusic();
     }
 
     public void ThemeOnButtonPressed()
     {
-        //soundManager.ThemeVolumeOn();
+        SoundManager.instance.enableBackgroundMusic();
     }
 
     public void SFXOffButtonPressed()
     {
-        //soundManager.SFXVolumeOff();
+        SoundManager.instance.disableSoundEfxVolume();
     }
 
     public void SFXOnButtonPressed()
     {
-        //soundManager.SFXVolumeOn();
+        SoundManager.instance.enableSoundEfxVolume();
     }
 
     public void ControlsButtonPressed()
     {
         ControlsCanvas.enabled = true;
-        //OptionsCanvas.enabled = false;
+        OptionsCanvas.enabled = false;
         MainCanvas.enabled = false;
     }
 
@@ -64,7 +64,7 @@ public class MainMenu : MonoBehaviour
     {
         MainCanvas.enabled = true;
         ControlsCanvas.enabled = false;
-        //OptionsCanvas.enabled = false;
+        OptionsCanvas.enabled = false;
     }
 
     public void ExitButtonPressed()
