@@ -19,6 +19,8 @@ public class SlotCanvas : MonoBehaviour
     public EnemyManager enemyManager;
     public PlayerMovement playerMovement;
 
+    public bool isWorking = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +60,7 @@ public class SlotCanvas : MonoBehaviour
     {
         PlayerMovement.isRandomizingSpell = true;
         enemyManager.DelayEnemies(padding);
+        isWorking = true;
         Slots.enabled = true;
         s1.enabled = true;
         s2.enabled = false;
@@ -69,6 +72,7 @@ public class SlotCanvas : MonoBehaviour
 
     public void resultsOn()
     {
+        isWorking = true;
         Slots.enabled = true;
         s1.enabled = false;
         s2.enabled = true;
@@ -82,7 +86,7 @@ public class SlotCanvas : MonoBehaviour
 
     public void EverythingOff()
     {
-        
+        isWorking = false;
         s1.enabled = false;
         s2.enabled = false;
         s3.enabled = false;

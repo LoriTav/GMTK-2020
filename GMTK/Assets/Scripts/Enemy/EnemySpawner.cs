@@ -35,7 +35,6 @@ public class EnemySpawner : MonoBehaviour
             
             // Spawn the actual enemy using the spawn position generated above
             GameObject newEnemy = Instantiate(enemyPrefab, spawnPos, Quaternion.Euler(new Vector3(0, 0, 0)));
-            Destroy(newEnemy, timeToDestroyPin);
             
             // Apply random element to pin
             int rndElementIdx = Random.Range(0, SlotMachineManager.instance.allElementsObjs.Length);

@@ -3502,6 +3502,7 @@ MonoBehaviour:
   padding: 0.5
   enemyManager: {fileID: 126029338}
   playerMovement: {fileID: 305415270}
+  isWorking: 0
 --- !u!224 &500065477
 RectTransform:
   m_ObjectHideFlags: 0

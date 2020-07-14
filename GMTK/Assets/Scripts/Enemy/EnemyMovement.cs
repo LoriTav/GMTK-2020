@@ -28,7 +28,6 @@ public class EnemyMovement : MonoBehaviour
             transform.position += new Vector3(0, speed * Time.deltaTime, 0);
 
         timer -= Time.deltaTime;
-       
     }
 
     public void AddDelay(float delayTimer)
