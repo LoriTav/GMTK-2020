@@ -7,14 +7,13 @@ public class OnBeatCanvas : MonoBehaviour
     public Canvas OnBeatC;
     public bool timerOn = false;
     public float timer;
-    public float padding;
+    public float onBeatDelay = .1f;
     public EnemyManager enemyManager;
 
     // Start is called before the first frame update
     void Start()
     {
         timer = .5f;
-        padding = .1f;
     }
 
     // Update is called once per frame
@@ -33,7 +32,7 @@ public class OnBeatCanvas : MonoBehaviour
 
     public void CanvasOn()
     {
-        enemyManager.DelayEnemies(padding);
+        enemyManager.DelayEnemies(onBeatDelay);
         OnBeatC.enabled = true;
         timerOn = true;
     }

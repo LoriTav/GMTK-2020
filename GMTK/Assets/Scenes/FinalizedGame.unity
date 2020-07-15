@@ -1861,6 +1861,7 @@ MonoBehaviour:
   canMove: 1
   PlayerAnim: {fileID: 0}
   audioSource: {fileID: 0}
+  slowDownSpeed: 0.5
 --- !u!114 &305415271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7592,7 +7593,7 @@ MonoBehaviour:
   OnBeatC: {fileID: 1282211412}
   timerOn: 0
   timer: 0.35
-  padding: 0
+  onBeatDelay: 0
   enemyManager: {fileID: 126029338}
 --- !u!114 &1282211410
 MonoBehaviour:

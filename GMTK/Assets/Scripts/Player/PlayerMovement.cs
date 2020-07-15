@@ -11,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
     public bool canMove = true;
     public Animator PlayerAnim;
     public AudioSource audioSource;
+    public float slowDownSpeed = 1f;
+
+    private float originalSpeed;
 
     // Start is called before the first frame update
     void Awake()
@@ -22,7 +25,8 @@ public class PlayerMovement : MonoBehaviour
         PlayerAnim = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         isRandomizingSpell = false;
-}
+        originalSpeed = speed;
+    }
 
     // Update is called once per frame
     void Update()
@@ -36,14 +40,13 @@ public class PlayerMovement : MonoBehaviour
             canMove = false;
             PlayerRb.velocity = new Vector2(0, 0);
         }
+
+        speed = canMove && !ScoreManager.instance.isGameOver ? originalSpeed : slowDownSpeed;
     }
 
     void FixedUpdate()
     {
-        if(canMove)
-        {
-            Move();
-        }
+        Move();
     }
 
     public void Move()
