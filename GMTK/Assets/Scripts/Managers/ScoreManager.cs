@@ -14,6 +14,7 @@ public class Frame
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
+    public Inventory inventory;
     public Frame[] frames;
     public int currentFrameIdx = 0;
     private int MaxLives = 3;
@@ -24,6 +25,8 @@ public class ScoreManager : MonoBehaviour
     public float gameOverDelay = 3;
     public EnemyManager enemyManager;
 
+    public bool SlotTimerOn = false;
+    public float slotTimer = .8f;
     private float gameoverTimer = 0;
     private float framesTimer = 0;
 
@@ -52,6 +55,16 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(SlotTimerOn)
+        {
+            slotTimer -= Time.deltaTime;
+        }
+
+        if(slotTimer < 0 && SlotTimerOn)
+        {
+            inventory.UpdateUIMachineSlots();
+        }
+
         if (isGameOver && SceneManager.GetActiveScene().buildIndex == 1) 
         {
             if(gameoverTimer <= 0)
@@ -129,6 +142,7 @@ public class ScoreManager : MonoBehaviour
         currentFrameIdx = 0;
         framesTimer = framesLoadTimer;
         totalScore = 0;
+        slotTimer = .8f;
     }
 
     // Updates UI to remove a bowling ball, ans checks for game over

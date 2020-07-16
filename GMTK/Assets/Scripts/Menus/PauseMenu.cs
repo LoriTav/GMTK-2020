@@ -21,25 +21,34 @@ public class PauseMenu : MonoBehaviour
         {
             if(Time.timeScale == 1)
             {
-                //pause
-                Time.timeScale = 0;
-                //makes sure all but pause canvas are closed initially
-                PauseCanvas.enabled = true;
-                ControlsCanvas.enabled = false;
-                OptionsCanvas.enabled = false;
-                isPaused = true;
+                PauseGame();
             }
             else
             {
-                //resume
-                Time.timeScale = 1;
-                //close all canvases
-                PauseCanvas.enabled = false;
-                ControlsCanvas.enabled = false;
-                OptionsCanvas.enabled = false;
-                isPaused = false;
+                ResumeGame();
             }
         }
+    }
+
+    public void ResumeGame()
+    {
+        //resume
+        Time.timeScale = 1;
+        //close all canvases
+        PauseCanvas.enabled = false;
+        ControlsCanvas.enabled = false;
+        OptionsCanvas.enabled = false;
+        isPaused = false;
+    }
+    public void PauseGame()
+    {
+        //pause
+        Time.timeScale = 0;
+        //makes sure all but pause canvas are closed initially
+        PauseCanvas.enabled = true;
+        ControlsCanvas.enabled = false;
+        OptionsCanvas.enabled = false;
+        isPaused = true;
     }
 
     public void OptionsButtonPressed()

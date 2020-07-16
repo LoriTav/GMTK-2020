@@ -25,6 +25,8 @@ public class SoundManager : MonoBehaviour
 
     public AudioSource backgroundAS;            // Should loop
     public AudioSource gameOverAS;              // This is a sound effect. Should not loop when played
+    public AudioSource slotsRollingEfx;
+    public AudioSource slotsPrizeEfx;
 
     private void Awake()
     {
@@ -80,6 +82,17 @@ public class SoundManager : MonoBehaviour
         gameOverAS.volume = soundEfxVolume;
         gameOverAS.clip = didPlayerWin ? playerWinSoundEfx : playerLoseSoundEfx;
         gameOverAS.Play();
+    }
+
+    public void PlaySlotsRolling()
+    {
+        slotsRollingEfx.Play();
+    }
+
+    public void PlaySlotsPrize()
+    {
+        slotsPrizeEfx.Play();
+        slotsRollingEfx.Stop();
     }
 
     public void enableBackgroundMusic()

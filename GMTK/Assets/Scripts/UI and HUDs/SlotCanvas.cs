@@ -24,6 +24,7 @@ public class SlotCanvas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       
         timer = .35f;
         timer2 = .05f;
         padding = 1.65f;
@@ -34,7 +35,9 @@ public class SlotCanvas : MonoBehaviour
     {
         if (timerOn == true)
         {
+           
             timer -= Time.deltaTime;
+           
         }
 
         if (timer2On == true)
@@ -45,6 +48,7 @@ public class SlotCanvas : MonoBehaviour
         if(timer < 0)
         {
             resultsOn();
+            SoundManager.instance.PlaySlotsPrize();
         }
 
         if (timer2 < -1)
@@ -56,6 +60,7 @@ public class SlotCanvas : MonoBehaviour
 
     public void CanvasOn()
     {
+        SoundManager.instance.PlaySlotsRolling();
         PlayerMovement.isRandomizingSpell = true;
         enemyManager.DelayEnemies(padding);
         isWorking = true;
@@ -84,6 +89,7 @@ public class SlotCanvas : MonoBehaviour
 
     public void EverythingOff()
     {
+        ScoreManager.instance.SlotTimerOn = false;
         isWorking = false;
         s1.enabled = false;
         s2.enabled = false;

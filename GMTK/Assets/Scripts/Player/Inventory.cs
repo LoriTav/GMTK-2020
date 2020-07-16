@@ -15,6 +15,7 @@ public class Inventory : MonoBehaviour
     public SpriteRenderer[] MachineSlots;
     public SlotCanvas slotsCanvas;
     public EnemyManager enemyManager;
+    public bool waveCanvasOn;
 
     public float BPM = 135;
     public float rythm = 0.89f;
@@ -33,7 +34,7 @@ public class Inventory : MonoBehaviour
         UpdateUIInventorySlots();
 
         SlotMachineManager.instance.UpdateMachineSlots();
-        UpdateUIMachineSlots();
+        ScoreManager.instance.SlotTimerOn = true;
 
         // Updates animator and sprite for first time
         UpdatePlayerAnimator();
@@ -122,7 +123,7 @@ public class Inventory : MonoBehaviour
             else
                 MachineSlots[i].sprite = null;
         }
-
+        SoundManager.instance.PlaySlotsRolling();
         slotsCanvas.enabled = true;
         slotsCanvas.CanvasOn();
     }
