@@ -63,6 +63,7 @@ public class ScoreManager : MonoBehaviour
         if(slotTimer < 0 && SlotTimerOn)
         {
             inventory.UpdateUIMachineSlots();
+            SlotTimerOn = false;
         }
 
         if (isGameOver && SceneManager.GetActiveScene().buildIndex == 1) 
