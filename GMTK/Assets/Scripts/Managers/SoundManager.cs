@@ -25,8 +25,7 @@ public class SoundManager : MonoBehaviour
 
     public AudioSource backgroundAS;            // Should loop
     public AudioSource gameOverAS;              // This is a sound effect. Should not loop when played
-    public AudioSource slotsRollingEfx;
-    public AudioSource slotsPrizeEfx;
+    public AudioSource slotsEfx;
 
     private void Awake()
     {
@@ -47,8 +46,8 @@ public class SoundManager : MonoBehaviour
     {
         backgroundAS.loop = true;
         gameOverAS.loop = false;
-        playLevelBackground(SceneManager.GetActiveScene().buildIndex);
         backgroundAS.volume = backgroundVolume;
+        playLevelBackground(SceneManager.GetActiveScene().buildIndex);
     }
 
     // Update is called once per frame
@@ -69,7 +68,17 @@ public class SoundManager : MonoBehaviour
 
         AudioClip audioToPlay = lvlIndex == 0 ? mainMenuTheme : bowlingTheme;
 
-        
+        if(enableBackgroundTheme == true)
+        {
+            backgroundVolume= audioToPlay == mainMenuTheme ? 1f : 0.25f;
+            backgroundAS.volume = backgroundVolume;
+        }
+        else 
+        {
+            disableBackgroundMusic();
+        }
+       
+
         backgroundAS.clip = audioToPlay;
         backgroundAS.Play();
     }
@@ -79,36 +88,46 @@ public class SoundManager : MonoBehaviour
         if(!gameOverAS) { return; }
         backgroundAS.Stop();
 
-        gameOverAS.volume = soundEfxVolume;
         gameOverAS.clip = didPlayerWin ? playerWinSoundEfx : playerLoseSoundEfx;
+
+        if (enableSoundEfx == true)
+        {
+            gameOverAS.volume = gameOverAS.clip == playerLoseSoundEfx ? 1f : soundEfxVolume;
+        }
+        else
+        {
+            gameOverAS.volume = soundEfxVolume;
+        }
+
         gameOverAS.Play();
     }
 
-    public void PlaySlotsRolling()
+    public void PlaySlotsSound()
     {
-        slotsRollingEfx.Play();
-    }
 
-    public void PlaySlotsPrize()
-    {
-        slotsPrizeEfx.Play();
-        slotsRollingEfx.Stop();
+        slotsEfx.volume = enableSoundEfx == true ? 1f : soundEfxVolume;
+        
+        slotsEfx.Play();
     }
 
     public void enableBackgroundMusic()
     {
         backgroundAS.volume = backgroundVolume;
+        enableBackgroundTheme = true;
     }
     public void disableBackgroundMusic()
     {
         backgroundAS.volume = 0;
+        enableBackgroundTheme = false;
     }
     public void enableSoundEfxVolume()
     {
         enableSoundEfx = true;
+        soundEfxVolume = 0.222f;
     }
     public void disableSoundEfxVolume()
     {
         enableSoundEfx = false;
+        soundEfxVolume = 0;
     }
 }

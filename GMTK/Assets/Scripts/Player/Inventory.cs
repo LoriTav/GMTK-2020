@@ -29,6 +29,7 @@ public class Inventory : MonoBehaviour
         enemyManager = GameObject.Find("Enemy Manager").GetComponent<EnemyManager>();
        
         SlotMachineManager.instance.playerInventory = this;
+        ScoreManager.instance.inventory = this;
 
         SlotMachineManager.instance.UpdateInventorySlots();
         UpdateUIInventorySlots();
@@ -123,7 +124,7 @@ public class Inventory : MonoBehaviour
             else
                 MachineSlots[i].sprite = null;
         }
-        SoundManager.instance.PlaySlotsRolling();
+        SoundManager.instance.PlaySlotsSound();
         slotsCanvas.enabled = true;
         slotsCanvas.CanvasOn();
     }

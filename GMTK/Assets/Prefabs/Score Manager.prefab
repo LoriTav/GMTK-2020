@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1889b64ae47a36c418e20c11822b18c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
   frames:
   - score: 0
     enemiesKilled: 0
@@ -71,3 +72,5 @@ MonoBehaviour:
   totalScore: 0
   gameOverDelay: 3
   enemyManager: {fileID: 0}
+  SlotTimerOn: 0
+  slotTimer: 0.8

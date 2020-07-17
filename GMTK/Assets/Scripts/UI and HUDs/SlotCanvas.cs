@@ -48,7 +48,6 @@ public class SlotCanvas : MonoBehaviour
         if(timer < 0)
         {
             resultsOn();
-            SoundManager.instance.PlaySlotsPrize();
         }
 
         if (timer2 < -1)
