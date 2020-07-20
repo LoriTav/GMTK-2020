@@ -150,8 +150,8 @@ public class ScoreManager : MonoBehaviour
     // Updates UI to remove a bowling ball, ans checks for game over
     public void ReduceALive()
     {
-        ShakeCamera();
         currentLives--;
+        ShakeCamera();
 
         GameObject.Find("HealthBalls").GetComponent<HealthBalls>().UpdateHealthBallsUI();
        
@@ -163,9 +163,9 @@ public class ScoreManager : MonoBehaviour
 
     public void ShakeCamera()
     {
-        int randNum = UnityEngine.Random.Range(0, 2);
+        int shakeIdx = currentLives == 0 ? 1 : 0;
         camPosition.GetComponent<Animator>().SetTrigger("shake");
-        camPosition.GetComponent<Animator>().SetInteger("shakeIndex", randNum);
+        camPosition.GetComponent<Animator>().SetInteger("shakeIndex", shakeIdx);
     }
 
     // Add a delay when the game is over
