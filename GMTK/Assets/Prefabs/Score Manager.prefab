@@ -72,5 +72,6 @@ MonoBehaviour:
   totalScore: 0
   gameOverDelay: 3
   enemyManager: {fileID: 0}
+  camPosition: {fileID: 0}
   SlotTimerOn: 0
   slotTimer: 0.8

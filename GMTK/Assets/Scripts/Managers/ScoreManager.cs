@@ -24,6 +24,7 @@ public class ScoreManager : MonoBehaviour
     public int totalScore = 0;
     public float gameOverDelay = 3;
     public EnemyManager enemyManager;
+    public Transform camPosition;
 
     public bool SlotTimerOn = false;
     public float slotTimer = .8f;
@@ -149,14 +150,22 @@ public class ScoreManager : MonoBehaviour
     // Updates UI to remove a bowling ball, ans checks for game over
     public void ReduceALive()
     {
+        ShakeCamera();
         currentLives--;
 
         GameObject.Find("HealthBalls").GetComponent<HealthBalls>().UpdateHealthBallsUI();
-
+       
         if (currentLives <= 0)
         {
             GameOverSequence();
         }
+    }
+
+    public void ShakeCamera()
+    {
+        int randNum = UnityEngine.Random.Range(0, 2);
+        camPosition.GetComponent<Animator>().SetTrigger("shake");
+        camPosition.GetComponent<Animator>().SetInteger("shakeIndex", randNum);
     }
 
     // Add a delay when the game is over
