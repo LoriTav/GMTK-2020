@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public static bool isRandomizingSpell;
     public bool canMove = true;
     public Animator PlayerAnim;
-    public AudioSource audioSource;
+    //public AudioSource audioSource;
     public float slowDownSpeed = 1f;
 
     private float originalSpeed;
@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
         PlayerRb.constraints = RigidbodyConstraints2D.FreezeRotation;
         PlayerRb.constraints = RigidbodyConstraints2D.FreezePositionY;
         PlayerAnim = GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
+        //audioSource = GetComponent<AudioSource>();
         isRandomizingSpell = false;
         originalSpeed = speed;
     }
@@ -57,10 +57,10 @@ public class PlayerMovement : MonoBehaviour
             PlayerRb.velocity = new Vector2(-speed, PlayerRb.velocity.y);
             transform.eulerAngles = new Vector3(0, 180, 0);
 
-            if (!audioSource.isPlaying)
+            /*if (!audioSource.isPlaying)
             {
                 audioSource.Play();
-            }
+            }*/
         }
         else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
@@ -68,14 +68,14 @@ public class PlayerMovement : MonoBehaviour
             PlayerRb.velocity = new Vector2(speed, PlayerRb.velocity.y);
             transform.eulerAngles = new Vector3(0, 0, 0);
 
-            if (!audioSource.isPlaying)
+           /* if (!audioSource.isPlaying)
             {
                 audioSource.Play();
-            }
+            }*/
         }
         else
         {
-            audioSource.Stop();
+            //audioSource.Stop();
             PlayerAnim.enabled = false;
             PlayerRb.velocity = new Vector2(0, 0); 
         }

@@ -173,6 +173,6 @@ public class ScoreManager : MonoBehaviour
     {
         gameoverTimer = gameOverDelay;
         isGameOver = true;
-        SoundManager.instance.PlayGameOver(currentLives > 0);       
+        //SoundManager.instance.PlayGameOver(currentLives > 0);       
     }
 }

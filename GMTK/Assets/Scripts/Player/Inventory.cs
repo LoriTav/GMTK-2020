@@ -124,7 +124,7 @@ public class Inventory : MonoBehaviour
             else
                 MachineSlots[i].sprite = null;
         }
-        SoundManager.instance.PlaySlotsSound();
+        //SoundManager.instance.PlaySlotsSound();
         slotsCanvas.enabled = true;
         slotsCanvas.CanvasOn();
     }

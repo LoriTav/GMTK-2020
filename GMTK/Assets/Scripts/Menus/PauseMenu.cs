@@ -60,22 +60,22 @@ public class PauseMenu : MonoBehaviour
 
     public void ThemeOffButtonPressed()
     {
-        SoundManager.instance.disableBackgroundMusic();
+        //SoundManager.instance.disableBackgroundMusic();
     }
 
     public void ThemeOnButtonPressed()
     {
-        SoundManager.instance.enableBackgroundMusic();
+        //SoundManager.instance.enableBackgroundMusic();
     }
 
     public void SFXOffButtonPressed()
     {
-        SoundManager.instance.disableSoundEfxVolume();
+        //SoundManager.instance.disableSoundEfxVolume();
     }
 
     public void SFXOnButtonPressed()
     {
-        SoundManager.instance.enableSoundEfxVolume();
+        //SoundManager.instance.enableSoundEfxVolume();
     }
 
     public void ControlsButtonPressed()

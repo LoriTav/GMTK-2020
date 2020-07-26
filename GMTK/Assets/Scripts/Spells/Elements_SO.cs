@@ -16,7 +16,7 @@ public class Elements_SO : ScriptableObject
     public RuntimeAnimatorController crackPinAliveController;
     public RuntimeAnimatorController[] crackPinDeathController;
 
-    public AudioClip audioClip;
+    //public AudioClip audioClip;
 
     // Start is called before the first frame update
     void Start()

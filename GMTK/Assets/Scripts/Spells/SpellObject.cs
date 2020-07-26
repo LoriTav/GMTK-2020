@@ -9,20 +9,21 @@ public class SpellObject : MonoBehaviour
     public float timeTilDestroy = 5;
     public Elements_SO elementObj;
 
-    private AudioSource audioSource;
+    //private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
         spellRb = transform.GetComponent<Rigidbody2D>();
         spellRb.velocity = transform.up * spellSpeed;
-
+        /*
         audioSource = GetComponent<AudioSource>();
         audioSource.loop = false;
         audioSource.clip = gameObject.GetComponent<ElementComp>().elementObj.audioClip;
         audioSource.volume = SoundManager.instance.enableSoundEfx ? SoundManager.instance.soundEfxVolume : 0;
 
         audioSource.Play();
+        */
     }
 
     // Update is called once per frame

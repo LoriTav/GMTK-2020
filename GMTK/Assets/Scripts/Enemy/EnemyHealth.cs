@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public int health = 2;
-    private AudioSource audioSource;
+    //private AudioSource audioSource;
     public float deathDelay = 2;
 
     private float deathTimer = 0;
@@ -17,7 +17,7 @@ public class EnemyHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = gameObject.GetComponent<AudioSource>();
+        //audioSource = gameObject.GetComponent<AudioSource>();
         animator = gameObject.GetComponent<Animator>();
         animator.runtimeAnimatorController = GetComponent<ElementComp>().elementObj.pinAliveController;
     }
@@ -72,11 +72,11 @@ public class EnemyHealth : MonoBehaviour
         deathTimer = deathDelay;
         isDeath = true;
 
-        AudioClip rndPinDownClip = SoundManager.instance.GetRandomPinHit();
-        audioSource.clip = rndPinDownClip;
-        audioSource.loop = false;
-        audioSource.volume = SoundManager.instance.enableSoundEfx ? SoundManager.instance.soundEfxVolume : 0;
-        audioSource.Play();
+        //AudioClip rndPinDownClip = SoundManager.instance.GetRandomPinHit();
+       // audioSource.clip = rndPinDownClip;
+        //audioSource.loop = false;
+        //audioSource.volume = SoundManager.instance.enableSoundEfx ? SoundManager.instance.soundEfxVolume : 0;
+       // audioSource.Play();
 
         animator.runtimeAnimatorController = GetComponent<ElementComp>().elementObj.crackPinDeathController[Random.Range(0, 2)];
     }
